@@ -1,4 +1,4 @@
-﻿\documentclass[10pt, a4paper, oneside]{article}
+﻿\documentclass[12pt, a4paper, oneside]{article}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, allcolors=black, pdfauthor=Evgenii Iuliugin,
@@ -25,12 +25,18 @@
 
 \pagestyle{empty}
 
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=-1em, leftmargin=2.5\labelsep}
+
 \begin{document}
 
 \Huge
-Evgenii Iuliugin
+\textbf{Evgenii Iuliugin}
 
-\LARGE
+\Large
 \textit{Software Engineer}
 
 \begin{flushright}
@@ -40,14 +46,84 @@ Evgenii Iuliugin
   % phone number
 \end{flushright}
 
+\normalsize
+
 \section*{SUMMARY}
+
+Software engineer with deep knowledge of hardware modeling and virtualization,
+operating system internals, hardware architectures, and software design
+principles. Result-oriented and well-qualified to develop complicated software
+products from gathering technical requirements to full system integration
+and debug.
+
+Programming languages: C/C++ (10 years of experience); x86 assembly; Python.
+
+Areas of interest: virtualization, operating systems, compiler technologies.
 
 \section*{EXPERIENCE}
 
+\begin{table}[htpb]
+  \begin{tabularx}{\textwidth}{lY}
+    2012 --- 2016 & \textbf{Intel Corporation} \hfill Moscow, Russia \\
+    & \textbf{\textit{Software Engineer}} \\
+    2016 --- now  & \textbf{Intel Corporation} \hfill Stockholm, Sweden \\
+    & \textbf{\textit{Senior Software Engineer}} \\
+    & \textit{Designed, implemented and optimized processor models. Integrated
+    the models with virtual platforms used for pre-silicon validation.} \\
+    & \begin{itemize}
+      \item Led development of VT-x based acceleration in Intel Simics.
+      \item Designed and implemented VT-x based acceleration in Intel Simics
+        for macOS.
+      \item Designed and implemeneted automatic generation of x86 instruction
+        descriptions for Intel Simics using Intel XED instruction descriptions.
+      \item Analyzed and improved performance of various Intel Simics processor
+        and device models.
+      \item Debugged and enabled boot scenario for different operating systems
+        and hypervisors on Intel Simics.
+      \item Collected and analyzed customer requirements, designed model
+        components based on the requirements.
+      \item Consulted team members on operating system internals.
+      \item Regularly shared knowledge via technical presentations to the team.
+      \item Regularly reviewed designs and code from peers.
+      \item Mentored junior contributors.
+      \end{itemize} \\
+  \end{tabularx}
+\end{table}
+
 \section*{EDUCATION}
 
-\section*{PUBLICATIONS}
+\begin{table}[htpb]
+  \begin{tabularx}{\textwidth}{lY}
+    2009 --- 2015 & \textbf{Moscow Institute of Physics and Technology} \hfill Moscow, Russia \\
+    & \textit{MS in Applied Mathematics and Physics} \\
+    2015 --- 2019 & \textbf{Moscow Institute of Physics and Technology} \hfill Moscow, Russia \\
+    & \textit{PhD in Computer Science} \\
+  \end{tabularx}
+\end{table}
 
-\section*{OTHER}
+\section*{LANGUAGES}
+
+\begin{itemize}
+\item Russian --- fluent;
+\item English --- intermediate;
+\item Swedish --- basic.
+\end{itemize}
+
+\section*{SKILLS}
+
+\begin{itemize}
+\item Expert knowledge of virtual machine design and implementation,
+  including binary translation and direct execution.
+\item Knowledge of operating system design and implementation.
+\item Deep knowledge of IA-32 and AMD64 processor architectures.
+\item Cross-platform development for Windows, Linux and macOS with both native
+  APIs and platform-agnostic libraries.
+\item Advanced experience with driver development, including Windows Driver
+  Model (WDM).
+\item Collaborative development with Subversion, GIT, Jenkins, TeamCity, etc.
+\item Proficiency with configuration management and build systems based on MAKE.
+\end{itemize}
+
+\section*{PUBLICATIONS}
 
 \end{document}
