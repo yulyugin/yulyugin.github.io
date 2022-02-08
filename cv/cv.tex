@@ -31,6 +31,10 @@
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=-1em, leftmargin=2.5\labelsep}
 
+\usepackage[bibencoding=inputenc, backend=biber, language=auto,
+  style=authortitle]{biblatex}
+\addbibresource{publications.bib}
+
 \begin{document}
 
 \Huge
@@ -124,6 +128,8 @@ Areas of interest: virtualization, operating systems, compiler technologies.
 \item Proficiency with configuration management and build systems based on MAKE.
 \end{itemize}
 
-\section*{PUBLICATIONS}
+\nocite{dvcon-lzcnt}
+\nocite{en-t-cet}
+\printbibliography[title={PUBLICATIONS}]
 
 \end{document}
