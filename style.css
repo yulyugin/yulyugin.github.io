@@ -68,3 +68,8 @@ footer {
     background-color: #ebebeb;
     text-align: center;
 }
+
+.date {
+    font-style: italic;
+    color: #bababa;
+}
