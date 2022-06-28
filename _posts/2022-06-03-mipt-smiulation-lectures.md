@@ -49,7 +49,7 @@ To add variability for the course I talked around our office and invited two gue
 
 ## Course materials
 
-All the course materials are published on github: https://github.com/yulyugin/sim-lectures. Slides presented in the 2021 term can be downloaded from https://github.com/yulyugin/sim-lectures/releases/tag/slides-2021.
+All the course materials are published on github: <https://github.com/yulyugin/sim-lectures>. Slides presented in the 2021 term can be downloaded from <https://github.com/yulyugin/sim-lectures/releases/tag/slides-2021>.
 
 Still, there are a lot of possible improvements for the course. TeX source code of the slides is full with TODOs that needs to be addressed. Big thanks to Jakob who helped me with postmortem for the course and spent part of his Christmas holidays looking at the course materials in order to provide a lot of useful feedback.
 
@@ -71,8 +71,8 @@ Articles studied and presented by the students:
 
 Projects made by the students during the course:
 
-* One student implemented an interpreter-based simulator of [К1986ВК025](https://ic.milandr.ru/products/mikrokontrollery_i_protsessory/32_razryadnye_mikrokontrollery/k1986vk025-okr-schetchik-m-/) 32-bit RISC-V microcontroller. Source code of the project: https://github.com/LotusBro98/MLDR187_simulator.
-* A group of three students created this amazing setup: a Simics PCI device that implements wrapping accesses to an [STM32Discovery](https://www.st.com/en/evaluation-tools/stm32-discovery-kits.html#overview) board running simple firmware capable to take values from UART and show them on a seven-segment display. The device was connected to [Simics QSP](https://www.intel.com/content/www/us/en/developer/articles/guide/simics-simulator-get-started.html) virtual platform. Software running in the simulated system controlled the PCI device through a custom Linux kernel module loaded into the simulated OS. This setup allowed to show numbers on a physical STM32Discovery board from the simulated system. Source code of the project: https://github.com/leokondrashov/simics_device.
-* A pair of students developed their own tiny architecture. One of the students built an assembler for the architecture. The other student implemented several different interpreters (switched, threaded, etc) for the architecture, compared and analyzed performance of the interpreters. Source code of the project: https://github.com/ShISA-VM/ShISA-VM.
+* One student implemented an interpreter-based simulator of [К1986ВК025](https://ic.milandr.ru/products/mikrokontrollery_i_protsessory/32_razryadnye_mikrokontrollery/k1986vk025-okr-schetchik-m-/) 32-bit RISC-V microcontroller. Source code of the project: <https://github.com/LotusBro98/MLDR187_simulator>.
+* A group of three students created this amazing setup: a Simics PCI device that implements wrapping accesses to an [STM32Discovery](https://www.st.com/en/evaluation-tools/stm32-discovery-kits.html#overview) board running simple firmware capable to take values from UART and show them on a seven-segment display. The device was connected to [Simics QSP](https://www.intel.com/content/www/us/en/developer/articles/guide/simics-simulator-get-started.html) virtual platform. Software running in the simulated system controlled the PCI device through a custom Linux kernel module loaded into the simulated OS. This setup allowed to show numbers on a physical STM32Discovery board from the simulated system. Source code of the project: <https://github.com/leokondrashov/simics_device>.
+* A pair of students developed their own tiny architecture. One of the students built an assembler for the architecture. The other student implemented several different interpreters (switched, threaded, etc) for the architecture, compared and analyzed performance of the interpreters. Source code of the project: <https://github.com/ShISA-VM/ShISA-VM>.
 
 [MIPT logo]: {{ site.baseurl }}/images/mipt.png
