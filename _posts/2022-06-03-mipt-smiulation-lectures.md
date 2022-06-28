@@ -8,7 +8,7 @@ date: 2022-06-03
 
 Luckily I had some experience in this field from the past. I also had materials that [Grigory Rechistov](https://github.com/grigory-rechistov) with a bit of my help used for a similar course several years ago. Grigory kindly shared all copies of the materials he had. All the old materials were in Russian thus it wasn't that simple to re-use them. Anyway, that was really helpful considering the short time window I had to prepare for the lectures.
 
-# Course plan
+## Course plan
 
 After thorough review of all the existing materials and careful thinking I came out with a short plan for the course consisting of twelve lectures:
 
@@ -40,20 +40,20 @@ In order to make the course practical I added two tasks on top of the theoretica
     * Create a simple hypervisor for 64-bit mode part of Intel 64 architecture using Intel VT-x.
     * Explore performance of ARM's, Intel's or AMD's virtualization support: how many cycles does it take to switch between hypervisor and virtual machine modes; how does additional state affect the switch time.
 
-# Guest lectures
+## Guest lectures
 
 To add variability for the course I talked around our office and invited two guest lecturers:
 
 1. [Jakob Engblom](http://jakob.engbloms.se/) held a "Using Virtual Platforms across the Product Life Cycle" lecture that mostly presented features and use cases of [Intel Simics](https://www.intel.com/content/www/us/en/developer/articles/tool/simics-simulator.html) simulator.
 2. [Grigory Rechistov](https://github.com/grigory-rechistov) presented results of his PhD research in a "Simulation of Cluster Systems" lecture.
 
-# Course materials
+## Course materials
 
 All the course materials are published on github: https://github.com/yulyugin/sim-lectures. Slides presented in the 2021 term can be downloaded from https://github.com/yulyugin/sim-lectures/releases/tag/slides-2021.
 
 Still, there are a lot of possible improvements for the course. TeX source code of the slides is full with TODOs that needs to be addressed. Big thanks to Jakob who helped me with postmortem for the course and spent part of his Christmas holidays looking at the course materials in order to provide a lot of useful feedback.
 
-# Results
+## Results
 
 Nine students in total attended the course. Big thanks to all of them for the time spent together! All of you showed amazing skills and I hope we will work together one day in the future.
 
