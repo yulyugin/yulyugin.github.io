@@ -135,6 +135,8 @@ A simple memory barrier or any other way to disable compiler optimizations for s
 #endif
 ```
 
+I used Intel C++ Compiler Version 19.1.3.311 Build 20201010 for all the experiments.
+
 # MASM oddity
 
 While doing the port I found a minor oddity in MASM. I needed a function that simply calls `LGDT` instruction thus loading Global Descriptor Table register from a given memory location. This is done as a part of host state restoring routine performed by vmlatency.
