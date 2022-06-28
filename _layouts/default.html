@@ -5,21 +5,25 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="{{ site.baseurl }}">Blog</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </nav>
     <div class="container">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="{{ site.baseurl }}">Blog</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+
       {{ content }}
-    </div><!-- /.container -->
+    </div>
+
     <footer>
+      <div class="container">
       <ul>
         <li><a href="mailto:yulyugin@gmail.com">email</a></li>
         <li><a href="https://github.com/yulyugin">github.com/yulyugin</a></li>
       </ul>
+      </div>
     </footer>
   </body>
 </html>
