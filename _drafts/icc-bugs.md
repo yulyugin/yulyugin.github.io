@@ -1,12 +1,15 @@
-# ICC bug and MASM oddity. Converting vmlatency to Windows.
+---
+layout: post
+title: "ICC Bug - Converting vmlatency to Windows"
+---
 
-For my PhD thesis I wrote a simple tool to measure VM-entry and VM-exit turnaround time - [vmlatency](https://github.com/yulyugin/vmlatency). The tool was initially implemented for Linux only. Later ported to macOS. Windows port wan't finished because I have other activities to deal with prior to the PhD defense. In 2021 I ported the tool on Windows but the port only worked with ICC compiler. The main reason for using ICC compiler is that inline assembler was used a lot to run different processor instructions.
+![ICC logo]{: style="float: left; width: 20%; padding: 1%"} For my PhD thesis I wrote a simple tool to measure VM-entry and VM-exit turnaround time - [vmlatency](https://github.com/yulyugin/vmlatency). The tool was initially implemented for Linux only. Later ported to macOS. Windows port wan't finished because I have other activities to deal with prior to the PhD defense. In 2021 I ported the tool on Windows but the port only worked with ICC compiler. The main reason for using ICC compiler is that inline assembler was used a lot to run different processor instructions.
 
 In spring 2022 I finally had time to make vmlatency work with Microsoft compiler. It is well known that Microsoft compiler only supports inline assembler for x86 but not x64 architecture. Microsoft's inline assembler is also completely different compared to GNU inline assembler. Obvious decision here was to use as much intrinsics as possible to avoid writing all the wrappers around processor instructions in [MASM](https://docs.microsoft.com/cpp/assembler/masm/masm-for-x64-ml64-exe) assembler. It was impossible to avoid assembler completely as some instructions are not available through intrinsics.
 
 To make the transition more gradual and easier to debug I decided to convert all inline assembly-based instructions wrappers to intrinsics or assembler one by one while still compiling with ICC until everything is converted and can be compiled with Microsoft compiler.
 
-# Buggy ICC intrinsics
+# Buggy ICC Intrinsics
 
 As noted above, not all needed instructions are available as intrinsics but it's obviously better to use intrinsics for those that are. All VMX instructions for example have corresponding intrinsics.
 
@@ -54,7 +57,7 @@ __set_cr4(__get_cr4() & ~CR4_VMXE);
 
 Clearing `CR4.VMXE` bit caused an exception which may only happen if the logical processor was in VMX root mode (see [SDM](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)). Thus, `VMXOFF` instruction never executed in the setup. Manual inspection of the driver binary confirmed that the instruction was not present in the binary. That was interesting and definitely needed additional investigation to understand what's going on.
 
-## Do not use `static inline` wrappers for intrinsics
+## Do not Use `static inline` Wrappers for Intrinsics
 
 Direct usage of the intrinsic instead of the `static inline` wrapper executed with not issues. Manual inspection confirmed - `VMXOFF` instruction was used by the driver. Here is the change:
 
@@ -74,7 +77,7 @@ index 996b450..8082900 100644
          if (!vmm->old_vmxe)
 ```
 
-## Compiling with no optimizations
+## Compiling with no Optimizations
 
 I also modified the build script to compile the driver with no optimization. Expectedly, this fixed the issue.
 
@@ -93,7 +96,7 @@ index 1fc6586..114b1d3 100644
 
 Optimization level `/O1` removes the instruction.
 
-## Looking at optimization report
+## Looking at Optimization Report
 
 ICC can generate an optimization report with [`/Qopr-report`](https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/compiler-options/optimization-report-options/qopt-report-qopt-report.html) option.
 
@@ -135,24 +138,6 @@ A simple memory barrier or any other way to disable compiler optimizations for s
 #endif
 ```
 
-I used Intel C++ Compiler Version 19.1.3.311 Build 20201010 for all the experiments.
+I used Intel C++ Compiler Version 19.1.3.311 Build 20201010 for all the experiments. I also found a [minor oddity in MASM]({{ site.baseurl }}/2022/masm) while doing the port.
 
-# MASM oddity
-
-While doing the port I found a minor oddity in MASM. I needed a function that simply calls `LGDT` instruction thus loading Global Descriptor Table register from a given memory location. This is done as a part of host state restoring routine performed by vmlatency.
-
-The tool runs in 64-bit mode only at the moment therefore I only had to write x64 assembly wrappers. `LGDT` instruction has the following format in 64-bit mode: `LGDT m16&64` thus having a pointer to 10 byte (referred as [TBYTE](https://docs.microsoft.com/cpp/assembler/masm/tbyte) by MASM) memory location. Based on the information I expected this assembly code to encode `LGDT` instruction:
-
-```
-lgdt tbyte ptr [rcx]
-```
-
-But this code doesn't compile with MASM and produces this error:
-
-```
-error A2024:invalid operand size for instruction
-```
-
-With a bit of experimenting I found that MASM expects a 6 byte (referred as [FWORD](https://docs.microsoft.com/cpp/assembler/masm/fword)) memory location for `LGDT` instruction. This is valid for 32-bit mode where `LGDT` has the following format: `LGDT m16&32`.
-
-This is just a minor oddity that is easy to find. In spite of this oddity the right binary sequence is generated as shown by manual inspect of the binary and error less execution.
+[ICC logo]: {{ site.baseurl }}/images/intel-cpp-compiler.png
