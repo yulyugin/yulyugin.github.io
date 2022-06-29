@@ -4,7 +4,7 @@ title: "Simulation foundation lectures at MIPT"
 date: 2022-06-03
 ---
 
-![MIPT logo]{: style="float: left; width: 10%; padding: 1%"} In spring 2021, I received an offer to hold a course of lectures about simulation technologies for fourth year students at [Moscow Institute of Physics and Technology (MIPT)](https://mipt.ru/english/). The course was supposed to focus on fundamentals of computer system simulation and how different kinds of simulators are used in the industry. This was an interesting offer and I accepted it because I always liked talking to students about different research and engineering topics.
+![MIPT logo]{: style="float: left; width: 20%; padding: 1%"} In spring 2021, I received an offer to hold a course of lectures about simulation technologies for fourth year students at [Moscow Institute of Physics and Technology (MIPT)](https://mipt.ru/english/). The course was supposed to focus on fundamentals of computer system simulation and how different kinds of simulators are used in the industry. This was an interesting offer and I accepted it because I always liked talking to students about different research and engineering topics.
 
 Luckily I had some experience in this field from the past. I also had materials that [Grigory Rechistov](https://github.com/grigory-rechistov) with a bit of my help used for a similar course several years ago. Grigory kindly shared all copies of the materials he had. All the old materials were in Russian thus it wasn't that simple to re-use them. Anyway, that was really helpful considering the short time window I had to prepare for the lectures.
 
