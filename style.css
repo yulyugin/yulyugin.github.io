@@ -81,3 +81,8 @@ footer {
     font-style: italic;
     color: #bababa;
 }
+
+.read-more {
+    text-transform: uppercase;
+    font-size: 15px;
+}
