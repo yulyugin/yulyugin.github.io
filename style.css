@@ -86,3 +86,11 @@ footer {
     text-transform: uppercase;
     font-size: 15px;
 }
+
+.highlight {
+    background-color: #f4f4ec;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
