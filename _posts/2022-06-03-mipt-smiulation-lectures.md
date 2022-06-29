@@ -35,7 +35,7 @@ In order to make the course practical I added two tasks on top of the theoretica
 2. For those students who wanted to get a higher credit I prepared a set of practical projects to build. It was allowed to do the projects in small groups. Here are some ideas that were on my list:
     * Create a RISC-V processor model (possibly with some devices). Usage of publicly available simulation frameworks was allowed.
     * Create a model of a PCI device in Simics, implement a Linux driver to control the device. Example: 4x6 led matrix panel to print letters.
-    * Implement several types of interpreters, do performance analysis and comparison. Architecture doesn't matter even [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) if fine.
+    * Implement several types of interpreters, do performance analysis and comparison. Architecture doesn't matter even [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) is fine.
     * Implement a simple template-based JIT for any architecture.
     * Create a simple hypervisor for 64-bit mode part of Intel 64 architecture using Intel VT-x.
     * Explore performance of ARM's, Intel's,f or AMD's virtualization support: how many cycles does it take to switch between hypervisor and virtual machine modes; how does additional state affect the switch time.
