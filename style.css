@@ -91,6 +91,10 @@ footer {
     background-color: #f4f4ec;
 }
 
+div.highlight {
+    overflow-x: scroll;
+}
+
 code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
