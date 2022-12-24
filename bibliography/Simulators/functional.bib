@@ -1,0 +1,74 @@
+@inproceedings{Junger:ARM-on-ARM:2020,
+  author    = {J\"{u}nger, Lukas and B\"{o}lke, Jan Luca Malte and Tobies, Stephan and
+               Leupers, Rainer and Hoffmann, Andreas},
+  title     = {ARM-on-ARM: Leveraging Virtualization Extensions for Fast Virtual Platforms},
+  year      = {2020},
+  booktitle = {Proceedings of the 23rd Conference on Design, Automation and Test in Europe},
+  abstract  = {Virtual Platforms (VPs) are an essential enabling technology in the System-on-a-Chip (SoC) development cycle. They are used for early software development and hardware/software codesign. However, since virtual prototyping is limited by simulation performance, improving the simulation speed of VPs has been an active research topic for years. Different strategies have been proposed, such as fast instruction set simulation using Dynamic Binary Translation (DBT). But even fast simulators do not reach native execution speed. They do however allow executing rich Operating System (OS) kernels, which is typically infeasible when another OS is already running.Executing multiple OSs on shared physical hardware is typically accomplished by using virtualization, which has a long history on x86 hardware. It enables encapsulated, native code execution on the host processor and has been extensively used in data centers, where many users share hardware resources. When it comes to embedded systems, virtualization has been made available recently. For ARM processors, virtualization was introduced with the ARM Virtualization Extensions for the ARMv7 architecture. Since virtualization allows native guest code execution, near-native execution speeds can be reached.In this work we present a VP containing a novel ARMv8 SystemC Transaction Level Modeling 2.0 (TLM) compatible processor model. The model leverages the ARM Virtualization Extensions (VE) via the Linux Kernel-based Virtual Machine (KVM) to execute the target software natively on an ARMv8 host. To enable the integration of the processor model into a loosely-timed VP, we developed an accurate instruction counting mechanism using the ARM Performance Monitors Extension (PMU). The requirements for integrating the processor model into a VP and the integration process are detailed in this work.Our evaluations show that speedups of up to 2.57x over state-of-the-art DBT-based simulator can be achieved using our processor model on ARMv8 hardware.},
+  address   = {San Jose, CA, USA},
+  isbn      = {9783981926347},
+  keywords  = {ESL, TLM, KVM, virtualization, SystemC},
+  location  = {Grenoble, France},
+  numpages  = {6},
+  pages     = {1508–1513},
+  publisher = {EDA Consortium},
+  series    = {DATE '20},
+}
+
+@inproceedings{Lifshitz:Zsim:2011,
+  author = {Lifshitz, Yair and Cohn, Robert S. and Tabach, Omer and Charney, Mark J. and Hazelwood, Kim M.},
+  title  = {Zsim : A Fast Architectural Simulator for ISA Design-Space Exploration},
+  year   = {2011},
+}
+
+@article{Magnusson:Simics:2002,
+  author     = {Magnusson, Peter S. and Christensson, Magnus and Eskilson, Jesper and Forsgren, Daniel and H\r{a}llberg, Gustav and H\"{o}gberg, Johan and Larsson, Fredrik and Moestedt, Andreas and Werner, Bengt},
+  title      = {Simics: A Full System Simulation Platform},
+  year       = {2002},
+  journal    = {Computer},
+  abstract   = {Full system simulation seeks to strike a balance between accuracy and performance. Many of its possibilities have been obvious to practitioners in both academia and industry for quite some time, perhaps decades, but Simics supports more of these possibilities within a single framework than other tools do.Simics is a platform for full system simulation that can run actual firmware and completely unmodified kernel and driver code. It is sufficiently abstract to achieve tolerable performance levels, and it provides both functional accuracy for running commercial workloads and sufficient timing accuracy to interface to detailed hardware models. Simics can also run a heterogeneous network of systems from different vendors within the same framework. Exceptionally fast, Simics can easily add new components and leverage older ones within a practical abstraction level. It offers a platform with a rich API and a powerful scripting environment for use in a broad range of applications.},
+  address    = {Washington, DC, USA},
+  doi        = {10.1109/2.982916},
+  issn       = {0018-9162},
+  issue_date = {February 2002},
+  month      = {feb},
+  number     = {2},
+  numpages   = {9},
+  pages      = {50-58},
+  publisher  = {IEEE Computer Society Press},
+  url        = {https://doi.org/10.1109/2.982916},
+  volume     = {35},
+}
+
+@inproceedings{Mihocka:Bochs:2008,
+  author = {Miho{\vc}ka, Darek and Shwartsman, Stanislav},
+  title  = {Virtualization Without Direct Execution or Jitting: Designing a Portable Virtual Machine Infrastructure},
+  year   = {2008},
+}
+
+@article{Rechistov:Simics-TSX:2013,
+  author  = {Rechistov, Grigory and Plotkin, Arnold},
+  title   = {Implementation of Intel Restricted Transactional Memory ISA Extension in Simics},
+  year    = {2013},
+  journal = {Procedia Computer Science},
+  doi     = {10.1016/j.procs.2013.05.349},
+  month   = {12},
+  pages   = {1804-1813},
+  volume  = {18},
+}
+
+@inproceedings{Kenney:MP-on-MP:,
+  author  = {Kenney, James and Davidmann, Simon and Lapides, Larry},
+  title   = {Parallel Simulation Accelerates Embedded Software Development, Debug and Test},
+  year    = {2015},
+  journal = {Embedded World},
+}
+
+@inproceedings{Nohl:JIT-Simulation:2002,
+  author    = {Nohl, A. and Braun, G. and Schliebusch, O. and Leupers, R. and Meyr, H. and Hoffmann, A.},
+  title     = {A universal technique for fast and flexible instruction-set architecture simulation},
+  year      = {2002},
+  booktitle = {Proceedings 2002 Design Automation Conference (IEEE Cat. No.02CH37324)},
+  doi       = {10.1109/DAC.2002.1012588},
+  pages     = {22-27},
+}
