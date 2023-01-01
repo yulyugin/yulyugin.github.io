@@ -1,0 +1,130 @@
+\documentclass[12pt, a4paper, oneside]{article}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, allcolors=blue, pdfauthor=Evgenii Iuliugin}
+
+\usepackage{indentfirst}
+\usepackage[top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm,
+  footskip=2.0cm]{geometry}
+
+\pagestyle{empty}
+
+\usepackage[bibencoding=inputenc, backend=biber, language=auto, style=verbose]{biblatex}
+\newcommand{\bibpath}{../bibliography}
+\addbibresource{\bibpath/Machine Learning/hardware.bib}
+\addbibresource{\bibpath/Machine Learning/optimizations.bib}
+\addbibresource{\bibpath/Processors/riscv.bib}
+\addbibresource{\bibpath/Simulators/cycle-accurate.bib}
+\addbibresource{\bibpath/Simulators/description-languages.bib}
+\addbibresource{\bibpath/Simulators/functional.bib}
+\addbibresource{\bibpath/Simulators/frameworks.bib}
+\addbibresource{\bibpath/Simulators/target-analysis.bib}
+\addbibresource{\bibpath/compilers.bib}
+\addbibresource{\bibpath/embedded-systems.bib}
+\addbibresource{\bibpath/fun.bib}
+\addbibresource{\bibpath/performance.bib}
+\addbibresource{\bibpath/software-philosophy.bib}
+\addbibresource{\bibpath/virtual-machines.bib}
+
+\begin{document}
+
+\section*{Machine Learning}
+\begin{itemize}
+    \item A new reconfigurable hardware architecture designed specifically to facilitate machine learning requirements:
+    
+    \cite{Prabhakar:Plasticine:2017}.
+
+    \item An optimization to increase parallelism of machine learning tasks:
+
+    \cite{Yuanzhong:Cross-Replica-Sharding:2020}.
+\end{itemize}
+
+\section*{Processors}
+\begin{itemize}
+    \item Western Digital builds its own RISC-V processor:
+    
+    \cite{Wheeler:WD-RISC-V:2019}.
+\end{itemize}
+
+\section*{Simulators}
+\begin{itemize}
+    \item Basic hardware performance modeling approach with separation of functional and timing simulation using ports:
+
+    \cite{Emer:Asim:2002}.
+
+    \item Micro architectural processor simulation framework:
+
+    \cite{Hughes:Rsim:2002}.
+
+    \item Infrastructure and framework for cycle-accurate and functional simulation:
+
+    \cite{Austin:SimpleScalar:2002}.
+
+    \item KVM-based direct execution for ARM:
+
+    \cite{Junger:ARM-on-ARM:2020}.
+
+    \item Overview of Simics simulator:
+
+    \cite{Magnusson:Simics:2002}.
+
+    \item Basic algorithm for multiprocessor target on multiprocessor host simulation:
+
+    \cite{Kenney:MP-on-MP:2015}.
+
+    \item Single instruction JIT compilation approach:
+
+    \cite{Nohl:JIT-Simulation:2002}.
+
+    \item Memory and thread usage analysis for software running inside a virtual platform:
+
+    \cite{Dahl:VP-Sanitizer:2018}.
+\end{itemize}
+
+\section*{Compilers}
+\begin{itemize}
+    \item An amazing overview of basic but demonstrative optimizations performed by a modern C/C++ compiler:
+    
+    \cite{Godbolt:Optimizations:2020}.
+\end{itemize}
+
+\section*{Embedded Systems}
+\begin{itemize}
+    \item PhD thesis by Jakob Engblom focused on studying of worst case execution time analysis for embedded systems:
+
+    \cite{Engblom:WCET:2002}.
+\end{itemize}
+
+\section*{Fun}
+\begin{itemize}
+    \item Really fun connection between texts of several popular songs and computer basics:
+
+    \cite{Colwell:Rock-N-Roll:2002}.
+\end{itemize}
+
+\section*{Performance}
+\begin{itemize}
+    \item A way to determine maximum performance of a particular system together with few ideas on how to decide what optimizations make sense to do and when:
+
+    \cite{Williams:Roofline:2009}.
+\end{itemize}
+
+\section*{Software Philosophy}
+\begin{itemize}
+    \item Discussions on what a perfect design process show look like:
+
+    \cite{Parnas:Fake-It:1986}.
+
+    \item Philosophical discussions about causes of errors in software:
+
+    \cite{Horner:Error-Rates:2019}.
+\end{itemize}
+
+\section*{Virtual Machines}
+\begin{itemize}
+    \item A set of techniques to detect a virtualized Android environment using basic phone identification information, sensor data and timing of processor instruction execution:
+
+    \cite{Petsas:Android-VM-Detection:2014}.
+\end{itemize}
+
+\end{document}
