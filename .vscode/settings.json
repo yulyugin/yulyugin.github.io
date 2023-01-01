@@ -1,5 +1,6 @@
 {
     "latex-workshop.bibtex-format.trailingComma": true,
     "latex-workshop.bibtex-format.sort.enabled": true,
-    "latex-workshop.bibtex-fields.order": ["author", "title", "year", "journal", "booktitle"]
+    "latex-workshop.bibtex-fields.order": ["author", "title", "year", "journal", "booktitle"],
+    "editor.wordWrap": "on",
 }
