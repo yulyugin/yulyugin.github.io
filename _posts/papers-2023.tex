@@ -8,6 +8,10 @@
     \item Ericsson's experience with virtual platform for pre-silicon software development. The virtual platforms are based on SystemC/TLM. This paper may be used as a showcase of simulation importance:
 
     \cite{Dahl:Ericsson-VP:2016}.
+
+    \item The paper describes an early design of KVM?ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
+
+    \cite{Dall:KVM-ARM:2014}
 \end{itemize}
 
 \section*{Processors}
