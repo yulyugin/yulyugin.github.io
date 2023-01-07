@@ -48,6 +48,24 @@
   volume     = {30},
 }
 
+@inproceedings{Dall:KVM-ARM:2014,
+  author    = {Dall, Christoffer and Nieh, Jason},
+  title     = {KVM/ARM: The Design and Implementation of the Linux ARM Hypervisor},
+  year      = {2014},
+  isbn      = {9781450323055},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/2541940.2541946},
+  doi       = {10.1145/2541940.2541946},
+  abstract  = {As ARM CPUs become increasingly common in mobile devices and servers, there is a growing demand for providing the benefits of virtualization for ARM-based devices. We present our experiences building the Linux ARM hypervisor, KVM/ARM, the first full system ARM virtualization solution that can run unmodified guest operating systems on ARM multicore hardware. KVM/ARM introduces split-mode virtualization, allowing a hypervisor to split its execution across CPU modes and be integrated into the Linux kernel. This allows KVM/ARM to leverage existing Linux hardware support and functionality to simplify hypervisor development and maintainability while utilizing recent ARM hardware virtualization extensions to run virtual machines with comparable performance to native execution. KVM/ARM has been successfully merged into the mainline Linux kernel, ensuring that it will gain wide adoption as the virtualization platform of choice for ARM. We provide the first measurements on real hardware of a complete hypervisor using ARM hardware virtualization support. Our results demonstrate that KVM/ARM has modest virtualization performance and power costs, and can achieve lower performance and power costs compared to x86-based Linux virtualization on multicore hardware.},
+  booktitle = {Proceedings of the 19th International Conference on Architectural Support for Programming Languages and Operating Systems},
+  pages     = {333-348},
+  numpages  = {16},
+  keywords  = {operating systems, virtualization, linux, arm, multicore, hypervisors},
+  location  = {Salt Lake City, Utah, USA},
+  series    = {ASPLOS '14},
+}
+
 @inproceedings{Petsas:Android-VM-Detection:2014,
   author    = {Petsas, Thanasis and Voyatzis, Giannis and Athanasopoulos, Elias and Polychronakis, Michalis and Ioannidis, Sotiris},
   title     = {Rage against the Virtual Machine: Hindering Dynamic Analysis of Android Malware},
