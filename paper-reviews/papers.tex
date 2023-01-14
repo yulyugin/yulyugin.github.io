@@ -9,8 +9,6 @@
 \usepackage[top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm,
   footskip=2.0cm]{geometry}
 
-\pagestyle{empty}
-
 \usepackage[bibencoding=inputenc, backend=biber, language=auto, style=verbose]{biblatex}
 \newcommand{\bibpath}{../bibliography}
 \addbibresource{\bibpath/Machine Learning/hardware.bib}
@@ -28,3 +26,12 @@
 \addbibresource{\bibpath/performance.bib}
 \addbibresource{\bibpath/software-philosophy.bib}
 \addbibresource{\bibpath/virtual-machines.bib}
+
+\usepackage{totcount}
+\newtotcounter{citenum}
+\def\oldcite{}
+% Must be done after \usepackage{biblatex} because it redefines \cite as well.
+\let\oldcite=\cite
+\def\cite{\stepcounter{citenum}\oldcite}
+
+\pagestyle{empty}
