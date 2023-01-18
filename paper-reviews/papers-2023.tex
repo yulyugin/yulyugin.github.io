@@ -28,6 +28,10 @@ A total of \total{citenum} papers read in the year.
     \item The paper presents ispc --- Intel SPMD Program Compiler. A new <<SPMD-on-SIMD>> concept is introduced. The concept seems to be quite reasonable for efficient compilation of SPMD programs for CPUs. A few specific optimizations are described to enable better usage of a CPU's SIMD hardware unit. The project looks like an interesting alternative to hand-written intrinsic-based optimizations. The project is still alive at the moment of writing the note. I can also see a few well familiar names in the list of contributors. As a side note for myself, the paper can be a good reference for \href{https://github.com/yulyugin/mipt-parallel-computing}{<<MIPT parallel computing>> course} if that one ever gets back to live:
 
     \cite{Pharr:ispc:2012}.
+
+    \item As practice shows creating a concise reproducer for a bug is sometimes as complex as fixing a bug. Compiler bugs can be especially hard to report as they are usually observed on real and rather big projects. Even relatively small \href{https://yulyugin.github.io/blog/2022/icc-bug}{compiler bug} reproducers could be hard to analyze and report. Authors of the paper tried to address this important issue by implementing an automatic test case reducers for C:
+
+    \cite{Regehr:C-Reduce:2012}
 \end{itemize}
 
 \end{document}
