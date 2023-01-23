@@ -13,7 +13,7 @@ A total of \total{citenum} papers read in the year.
 
     \item The paper describes an early design of KVM?ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
 
-    \cite{Dall:KVM-ARM:2014}
+    \cite{Dall:KVM-ARM:2014}.
 \end{itemize}
 
 \section*{Processors}
@@ -24,7 +24,7 @@ A total of \total{citenum} papers read in the year.
 
     \item The article describes ARM 64-bit only architecture called Helios. It is a first licensable CPU that combines OOO and multithreaded execution. The main application for the processor are data transfer infrastructure and automotive industry. The processor architecture supports INT8 and FP16 formats that are the current trend for DNN acceleration. On top of INT8 and FP16 the processor can be closes integrated with various accelerators:
 
-    \cite{Demler:Helios:2019}
+    \cite{Demler:Helios:2019}.
 \end{itemize}
 
 \section*{Compilers}
@@ -35,7 +35,14 @@ A total of \total{citenum} papers read in the year.
 
     \item As practice shows creating a concise reproducer for a bug is sometimes as complex as fixing a bug. Compiler bugs can be especially hard to report as they are usually observed on real and rather big projects. Even relatively small \href{https://yulyugin.github.io/blog/2022/icc-bug}{compiler bug} reproducers could be hard to analyze and report. Authors of the paper tried to address this important issue by implementing an automatic test case reducers for C:
 
-    \cite{Regehr:C-Reduce:2012}
+    \cite{Regehr:C-Reduce:2012}.
+\end{itemize}
+
+\section*{Computer Architecture}
+\begin{itemize}
+    \item Nice high level overview of VLIW architecture and comparison with typical RISC and CISC designs. Great reference for students to show the basic concepts of CPU architectures even though it is not fully relevant anymore:
+
+    \cite{Philips:VLIW:1997}.
 \end{itemize}
 
 \end{document}
