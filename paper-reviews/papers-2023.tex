@@ -61,6 +61,10 @@ A total of \total{citenum} papers read in the year.
     \item Optical computing for AI moves closer to commercialization. Startups originating from MIT and Princeton demonstrate interesting optical computing for AI solutions. The systems are targeting convolutional neural networks. 2D filtering is equal to 2D convolution. The approach is aimed to reduce heat and power consumption and of course improve performance simultaneously. One of the main problems so far is optical to electrical and electrical to optical signal conversion. Solutions for the problem seems to be a key for high performance at the moment. The article also contains a link to a scientific paper with more details.
 
     \cite{Wheeler:Optical-AI:2019}.
+
+    \item Centaur has developed an x86 processor with deep-learning accelerator --- Ncore. The accelerator has a typical design for the field of application: it's a VLIW architecture relying on traditional SIMD approach with smaller sized vector elements like INT8, BF16, etc. The architecture is 64 times wider that Intel's AVX-512. The x86 cores are alike low-end Skylake cores but it can achieve better neural network performance thanks to the accelerator. Centaur has also constructed a basic software stack that convert TensorFlow to an internal graph format that is later compiled into Ncore assembly - another typical approach for deep-learning accelerators. The article reports that so fat Centaur's software can only handle inference but not training.
+
+    \cite{Gwennap:Centaur-AI:2019}.
 \end{itemize}
 
 \end{document}
