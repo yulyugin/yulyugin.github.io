@@ -7,64 +7,68 @@ A total of \total{citenum} papers read in the year.
 \section*{Simulators}
 
 \begin{itemize}
-    \item Ericsson's experience with virtual platform for pre-silicon software development. The virtual platforms are based on SystemC/TLM. This paper may be used as a showcase of simulation importance:
+    \item \cite{Dahl:Ericsson-VP:2016}:
 
-    \cite{Dahl:Ericsson-VP:2016}.
+    Ericsson's experience with virtual platform for pre-silicon software development. The virtual platforms are based on SystemC/TLM. This paper may be used as a showcase of simulation importance.
 
-    \item The paper describes an early design of KVM?ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
-
-    \cite{Dall:KVM-ARM:2014}.
+    \item \cite{Dall:KVM-ARM:2014}:
+    
+    The paper describes an early design of KVM?ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
 \end{itemize}
 
 \section*{Processors}
 \begin{itemize}
-    \item A 64 core ARM reference server CPU design similar to Cortex-A76 microarchitecture. Single core performance is not that good but the processor is expectedly much more power efficient. New hardware-based coherence model for i-cache aiming improvement for multiple VM performance. SPEC CPU 2006 is still referenced as a benchmark. Interesting reference to read --- <<Editorial: Intel Hides Behind ICC>> --- MPR claims that ICC must be approximately 30\% faster than GCC (at least for SPEC workloads):
+    \item \cite{Gwennap:ARM-Neoverse:2019}:
+    
+    A 64 core ARM reference server CPU design similar to Cortex-A76 microarchitecture. Single core performance is not that good but the processor is expectedly much more power efficient. New hardware-based coherence model for i-cache aiming improvement for multiple VM performance. SPEC CPU 2006 is still referenced as a benchmark. Interesting reference to read --- <<Editorial: Intel Hides Behind ICC>> --- MPR claims that ICC must be approximately 30\% faster than GCC (at least for SPEC workloads).
 
-    \cite{Gwennap:ARM-Neoverse:2019}.
+    \item \cite{Demler:Helios:2019}:
 
-    \item The article describes ARM 64-bit only architecture called Helios. It is a first licensable CPU that combines OOO and multithreaded execution. The main application for the processor are data transfer infrastructure and automotive industry. The processor architecture supports INT8 and FP16 formats that are the current trend for DNN acceleration. On top of INT8 and FP16 the processor can be closes integrated with various accelerators:
+    The article describes ARM 64-bit only architecture called Helios. It is a first licensable CPU that combines OOO and multithreaded execution. The main application for the processor are data transfer infrastructure and automotive industry. The processor architecture supports INT8 and FP16 formats that are the current trend for DNN acceleration. On top of INT8 and FP16 the processor can be closes integrated with various accelerators.
 
-    \cite{Demler:Helios:2019}.
 \end{itemize}
 
 \section*{Compilers}
 \begin{itemize}
-    \item The paper presents ispc --- Intel SPMD Program Compiler. A new <<SPMD-on-SIMD>> concept is introduced. The concept seems to be quite reasonable for efficient compilation of SPMD programs for CPUs. A few specific optimizations are described to enable better usage of a CPU's SIMD hardware unit. The project looks like an interesting alternative to hand-written intrinsic-based optimizations. The project is still alive at the moment of writing the note. I can also see a few well familiar names in the list of contributors. As a side note for myself, the paper can be a good reference for \href{https://github.com/yulyugin/mipt-parallel-computing}{<<MIPT parallel computing>> course} if that one ever gets back to live:
+    \item \cite{Pharr:ispc:2012}:
 
-    \cite{Pharr:ispc:2012}.
+    The paper presents ispc --- Intel SPMD Program Compiler. A new <<SPMD-on-SIMD>> concept is introduced. The concept seems to be quite reasonable for efficient compilation of SPMD programs for CPUs. A few specific optimizations are described to enable better usage of a CPU's SIMD hardware unit. The project looks like an interesting alternative to hand-written intrinsic-based optimizations. The project is still alive at the moment of writing the note. I can also see a few well familiar names in the list of contributors. As a side note for myself, the paper can be a good reference for \href{https://github.com/yulyugin/mipt-parallel-computing}{<<MIPT parallel computing>> course} if that one ever gets back to live.
+\end{itemize}
 
-    \item As practice shows creating a concise reproducer for a bug is sometimes as complex as fixing the bug. Compiler bugs can be especially hard to report as they are usually observed on real and rather big projects. Even relatively small \href{https://yulyugin.github.io/blog/2022/icc-bug}{compiler bug} reproducers could be hard to analyze and report. Authors of the paper tried to address this important issue by implementing an automatic test case reducers for C:
+\section*{Testing}
+\begin{itemize}
+    \item \cite{Regehr:C-Reduce:2012}:
 
-    \cite{Regehr:C-Reduce:2012}.
+    As practice shows creating a concise reproducer for a bug is sometimes as complex as fixing the bug. Compiler bugs can be especially hard to report as they are usually observed on real and rather big projects. Even relatively small \href{https://yulyugin.github.io/blog/2022/icc-bug}{compiler bug} reproducers could be hard to analyze and report. Authors of the paper tried to address this important issue by implementing an automatic test case reducers for C.
 \end{itemize}
 
 \section*{Computer Architecture}
 \begin{itemize}
-    \item Nice high level overview of VLIW architecture and comparison with typical RISC and CISC designs. Great reference for students to show the basic concepts of CPU architectures even though it is not fully relevant anymore:
+    \item \cite{Philips:VLIW:1997}:
 
-    \cite{Philips:VLIW:1997}.
+    Nice high level overview of VLIW architecture and comparison with typical RISC and CISC designs. Great reference for students to show the basic concepts of CPU architectures even though it is not fully relevant anymore.
 
-    \item The paper describes a VLIW architecture developed by Multiflow Corporation. It is one of the VLIW pioneering designs. It is always enjoyable to read old papers about computer architecture trends and ideas; compare the old ideas and expectations with how it turned out now: <<a VLIW machine was expected to provide from ten to thirty times the performance of a more conventional machine built of the same implementation technology>>. A great comments for the citation would be something like: <<if only we would have smart enough compiler>>. Industry practice so far showed that VLIW could be an amazing architecture for some DSPs while a superscalar processor delivers better results for general purpose usage:
+    \item \cite{Colwell:Multiflow-VLIW:1987}:
 
-    \cite{Colwell:Multiflow-VLIW:1987}.
+    The paper describes a VLIW architecture developed by Multiflow Corporation. It is one of the VLIW pioneering designs. It is always enjoyable to read old papers about computer architecture trends and ideas; compare the old ideas and expectations with how it turned out now: <<a VLIW machine was expected to provide from ten to thirty times the performance of a more conventional machine built of the same implementation technology>>. A great comments for the citation would be something like: <<if only we would have smart enough compiler>>. Industry practice so far showed that VLIW could be an amazing architecture for some DSPs while a superscalar processor delivers better results for general purpose usage.
 \end{itemize}
 
 \section*{Autonomous Driving}
 \begin{itemize}
-    \item The article present an overview of Mobileye existing and in flight processors for advanced-driver-assistance-systems (ADAS). The article also presents a simplistic comparison with Nvidia GPU-based solutions for the area. The main comparison metrics are trillion operations per second (TOPS) and efficiency which is measured as TOPS divided by power consumption. It is an overall nice basic overview of what is happening in the area with cool examples of 360-degree image construction and object classification:
+    \item \cite{Delmer:Mobileye:2019}:
 
-    \cite{Delmer:Mobileye:2019}.
+    The article present an overview of Mobileye existing and in flight processors for advanced-driver-assistance-systems (ADAS). The article also presents a simplistic comparison with Nvidia GPU-based solutions for the area. The main comparison metrics are trillion operations per second (TOPS) and efficiency which is measured as TOPS divided by power consumption. It is an overall nice basic overview of what is happening in the area with cool examples of 360-degree image construction and object classification.
 \end{itemize}
 
 \section*{Machine Learning}
 \begin{itemize}
-    \item Optical computing for AI moves closer to commercialization. Startups originating from MIT and Princeton demonstrate interesting optical computing for AI solutions. The systems are targeting convolutional neural networks. 2D filtering is equal to 2D convolution. The approach is aimed to reduce heat and power consumption and of course improve performance simultaneously. One of the main problems so far is optical to electrical and electrical to optical signal conversion. Solutions for the problem seems to be a key for high performance at the moment. The article also contains a link to a scientific paper with more details.
+    \item \cite{Wheeler:Optical-AI:2019}:
 
-    \cite{Wheeler:Optical-AI:2019}.
+    Optical computing for AI moves closer to commercialization. Startups originating from MIT and Princeton demonstrate interesting optical computing for AI solutions. The systems are targeting convolutional neural networks. 2D filtering is equal to 2D convolution. The approach is aimed to reduce heat and power consumption and of course improve performance simultaneously. One of the main problems so far is optical to electrical and electrical to optical signal conversion. Solutions for the problem seems to be a key for high performance at the moment. The article also contains a link to a scientific paper with more details.
 
-    \item Centaur has developed an x86 processor with deep-learning accelerator --- Ncore. The accelerator has a typical design for the field of application: it's a VLIW architecture relying on traditional SIMD approach with smaller sized vector elements like INT8, BF16, etc. The architecture is 64 times wider that Intel's AVX-512. The x86 cores are alike low-end Skylake cores but it can achieve better neural network performance thanks to the accelerator. Centaur has also constructed a basic software stack that convert TensorFlow to an internal graph format that is later compiled into Ncore assembly - another typical approach for deep-learning accelerators. The article reports that so fat Centaur's software can only handle inference but not training.
-
-    \cite{Gwennap:Centaur-AI:2019}.
+    \item \cite{Gwennap:Centaur-AI:2019}:
+    
+    Centaur has developed an x86 processor with deep-learning accelerator --- Ncore. The accelerator has a typical design for the field of application: it's a VLIW architecture relying on traditional SIMD approach with smaller sized vector elements like INT8, BF16, etc. The architecture is 64 times wider that Intel's AVX-512. The x86 cores are alike low-end Skylake cores but it can achieve better neural network performance thanks to the accelerator. Centaur has also constructed a basic software stack that convert TensorFlow to an internal graph format that is later compiled into Ncore assembly - another typical approach for deep-learning accelerators. The article reports that so fat Centaur's software can only handle inference but not training.
 \end{itemize}
 
 \end{document}
