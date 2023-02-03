@@ -12,14 +12,14 @@ A total of \total{citenum} papers read in the year.
     Ericsson's experience with virtual platform for pre-silicon software development. The virtual platforms are based on SystemC/TLM. This paper may be used as a showcase of simulation importance.
 
     \item \cite{Dall:KVM-ARM:2014}:
-    
+
     The paper describes an early design of KVM?ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
 \end{itemize}
 
 \section*{Processors}
 \begin{itemize}
     \item \cite{Gwennap:ARM-Neoverse:2019}:
-    
+
     A 64 core ARM reference server CPU design similar to Cortex-A76 microarchitecture. Single core performance is not that good but the processor is expectedly much more power efficient. New hardware-based coherence model for i-cache aiming improvement for multiple VM performance. SPEC CPU 2006 is still referenced as a benchmark. Interesting reference to read --- <<Editorial: Intel Hides Behind ICC>> --- MPR claims that ICC must be approximately 30\% faster than GCC (at least for SPEC workloads).
 
     \item \cite{Demler:Helios:2019}:
@@ -67,8 +67,15 @@ A total of \total{citenum} papers read in the year.
     Optical computing for AI moves closer to commercialization. Startups originating from MIT and Princeton demonstrate interesting optical computing for AI solutions. The systems are targeting convolutional neural networks. 2D filtering is equal to 2D convolution. The approach is aimed to reduce heat and power consumption and of course improve performance simultaneously. One of the main problems so far is optical to electrical and electrical to optical signal conversion. Solutions for the problem seems to be a key for high performance at the moment. The article also contains a link to a scientific paper with more details.
 
     \item \cite{Gwennap:Centaur-AI:2019}:
-    
+
     Centaur has developed an x86 processor with deep-learning accelerator --- Ncore. The accelerator has a typical design for the field of application: it's a VLIW architecture relying on traditional SIMD approach with smaller sized vector elements like INT8, BF16, etc. The architecture is 64 times wider that Intel's AVX-512. The x86 cores are alike low-end Skylake cores but it can achieve better neural network performance thanks to the accelerator. Centaur has also constructed a basic software stack that convert TensorFlow to an internal graph format that is later compiled into Ncore assembly - another typical approach for deep-learning accelerators. The article reports that so fat Centaur's software can only handle inference but not training.
 \end{itemize}
+
+\section*{Virtual Machines}
+\begin{itemize*}
+    \item \cite{Rosenblum:VMM-trends:2005}:
+
+    The article includes a very concise VMM history and some basic techniques like \textit{shadow paging}. Strict focus of the article is on VMware's solutions of that time. There described one interesting paravirtualization idea I didn't know about before --- \textit{ballon process} running inside a Guest OS and communicating with the VMM. The process can allocated a bunch of memory thus forcing the Guest OS to use its knowledge about other processes to page unused memory out. VMM thus can also page out this memory and then reclaim the memory used by the \textit{ballon process} - nice trick.
+\emd{itemize*}
 
 \end{document}
