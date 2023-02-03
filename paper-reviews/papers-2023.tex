@@ -13,7 +13,7 @@ A total of \total{citenum} papers read in the year.
 
     \item \cite{Dall:KVM-ARM:2014}:
 
-    The paper describes an early design of KVM?ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
+    The paper describes an early design of KVM/ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
 \end{itemize}
 
 \section*{Processors}
@@ -24,8 +24,7 @@ A total of \total{citenum} papers read in the year.
 
     \item \cite{Demler:Helios:2019}:
 
-    The article describes ARM 64-bit only architecture called Helios. It is a first licensable CPU that combines OOO and multithreaded execution. The main application for the processor are data transfer infrastructure and automotive industry. The processor architecture supports INT8 and FP16 formats that are the current trend for DNN acceleration. On top of INT8 and FP16 the processor can be closes integrated with various accelerators.
-
+    The article describes ARM 64-bit only architecture called Helios. It is a first licensable CPU that combines OOO and multithreaded execution. The main application for the processor are data transfer infrastructure and automotive industry. The processor architecture supports INT8 and FP16 formats that are the current trend for DNN acceleration. On top of INT8 and FP16 the processor can be closely integrated with various accelerators.
 \end{itemize}
 
 \section*{Compilers}
@@ -40,6 +39,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Regehr:C-Reduce:2012}:
 
     As practice shows creating a concise reproducer for a bug is sometimes as complex as fixing the bug. Compiler bugs can be especially hard to report as they are usually observed on real and rather big projects. Even relatively small \href{https://yulyugin.github.io/blog/2022/icc-bug}{compiler bug} reproducers could be hard to analyze and report. Authors of the paper tried to address this important issue by implementing an automatic test case reducers for C.
+
+    \item \cite{Easson:FrobOS:2012}:
+
+    The article describes the ideas behind VMware's minimalistic test operating system FrobOS. Tbe operating system is a great instrument for bare-metal hardware tests. The tooling around the OS also enables nice and fast testing for their hypervisor: simple ways to run port and run the tests between different CPU and hypervisor modes.
 \end{itemize}
 
 \section*{Computer Architecture}
@@ -72,10 +75,10 @@ A total of \total{citenum} papers read in the year.
 \end{itemize}
 
 \section*{Virtual Machines}
-\begin{itemize*}
+\begin{itemize}
     \item \cite{Rosenblum:VMM-trends:2005}:
 
     The article includes a very concise VMM history and some basic techniques like \textit{shadow paging}. Strict focus of the article is on VMware's solutions of that time. There described one interesting paravirtualization idea I didn't know about before --- \textit{ballon process} running inside a Guest OS and communicating with the VMM. The process can allocated a bunch of memory thus forcing the Guest OS to use its knowledge about other processes to page unused memory out. VMM thus can also page out this memory and then reclaim the memory used by the \textit{ballon process} - nice trick.
-\emd{itemize*}
+\end{itemize}
 
 \end{document}
