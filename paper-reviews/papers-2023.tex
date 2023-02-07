@@ -14,6 +14,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Dall:KVM-ARM:2014}:
 
     The paper describes an early design of KVM/ARM port using the first version of ARM virtualization hardware support. Authors claim to introduce a novel "split-mode" virtualization approach as a way to run hypervisor simultaneously in different CPU privileged modes. This approach is not new though in my opinion. There exists for a long time hypervisors like Simics that use both kernel and user CPU modes to leverage different parts of CPU virtualization. Nevertheless, authors have done a grade work adding ARM support to KVM with generic and rather minimal changes to KVM and Linux kernel. There is an interesting comparison of x86 and ARM virtualization power and performance overheads in the paper. Some of the links in references are also worse looking through later.
+
+    \item \cite{Menard:SystemC-gem5:2017}:
+
+    The article provides a short summary of transaction-based communication in SystemC TLM and in gem5. However the main focus of the paper is on an adapter layer between SystemC TLM and gem5 transactions. The layer provides bi-directional translation for the transaction. The layer was tested on a special-purpose worse-case setup and a couple of more realistic workflows. On the worst-case scenario the layer demonstrated roughly 2x slowdown compared to SystemC only. The integration is claimed to be merged to gem5 official repo.
 \end{itemize}
 
 \section*{Processors}
