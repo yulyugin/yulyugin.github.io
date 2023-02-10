@@ -18,6 +18,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Menard:SystemC-gem5:2017}:
 
     The article provides a short summary of transaction-based communication in SystemC TLM and in gem5. However the main focus of the paper is on an adapter layer between SystemC TLM and gem5 transactions. The layer provides bi-directional translation for the transaction. The layer was tested on a special-purpose worse-case setup and a couple of more realistic workflows. On the worst-case scenario the layer demonstrated roughly 2x slowdown compared to SystemC only. The integration is claimed to be merged to gem5 official repo.
+
+    \item \cite{Sandberg:FullSpeedAhead:2015}:
+
+    The article describes an approach for fast full-system cycle-accurate simulation to enable efficient hardware and software co-design. The approach address fixed-software limitation of the standard checkpoint-based critical path cycle-accurate simulation approach. First, the authors reduced the porting of functional warming for the samples and introduced error estimation algorithm for cache warming. The error estimation compares best- and worst-case results (run in parallel) to determine whether limited functional warming has significant effect on the results or not. The technique is named Full Speed Ahead. The authors extended the technique with parallel sample execution. The main idea of the parallel Full Speed Ahead approach is to break target workload into samples and execute the samples in parallel while fast-forwarding to the sample boundaries using hardware-supported virtualization. As result, the authors claims to achieve near-native simulation speed while running on a wide enough (in terms of processor cores) host systems.
 \end{itemize}
 
 \section*{Processors}
