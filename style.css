@@ -1,8 +1,9 @@
 body {
     font-family: 'Serif';
-    font-size: 18px;
-    background: #fff;
+    font-size: 20px;
+    background: #252525;
     padding-bottom: 100px;
+    color: #cccccc;
 }
 
 .container {
@@ -41,7 +42,7 @@ h1 a {
 }
 
 h1, h2, h3 {
-    color: #474747;
+    color: #fff;
     margin: 1em 0 15px;
 }
 
@@ -50,11 +51,11 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 26px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 p {
@@ -66,14 +67,14 @@ ul, ol {
 }
 
 footer {
-    border-top: 1px solid #cfcfcf;
+    border-top: 1px solid #000;
     position:fixed;
     bottom:0;
     left:0;
     width:100%;
     height:50px;
     font-size: 16px;
-    background-color: #ebebeb;
+    background-color: #1e1e1e;
     text-align: center;
 }
 
@@ -88,7 +89,7 @@ footer {
 }
 
 .highlight {
-    background-color: #f4f4ec;
+    background-color: #444444;
 }
 
 div.highlight {
@@ -98,4 +99,5 @@ div.highlight {
 code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
+    color: #ddb974;
 }
