@@ -93,4 +93,11 @@ A total of \total{citenum} papers read in the year.
     The article includes a very concise VMM history and some basic techniques like \textit{shadow paging}. Strict focus of the article is on VMware's solutions of that time. There described one interesting paravirtualization idea I didn't know about before --- \textit{ballon process} running inside a Guest OS and communicating with the VMM. The process can allocated a bunch of memory thus forcing the Guest OS to use its knowledge about other processes to page unused memory out. VMM thus can also page out this memory and then reclaim the memory used by the \textit{ballon process} - nice trick.
 \end{itemize}
 
+\section*{Binary Translation}
+\begin{itemize}
+    \item \cite{Altman:BT-Future:2001}:
+
+    The article provides a nice overview of Transmeta Crusoe and IBM DAISY with some insides on the special-purpose underlying hardware. There is an overview of other binary translation systems including LaTTe JVM. There is a clear focus on speculative operations to be performed by Crusoe and DAISY binary translators. One optimization had a bit unclear benefits when I read the article --- the speculative loads performed by DAISY. While reading the article I only thought about the speculative operation as a cache warmup for the later reload. The problem here is that speculative loads could overlap with stores performed before the actual load should occur. To address this issue DAISY uses a \textbf{load-verify} operations that is insert to the location of the original load. The operation reloads the memory value and compares it with the speculatively pre-loaded one. Depending on the result DAISY either continues as normal or enters recovery mode. While writing the note I realized that the load speculation might allow other speculations to be performed and thus the recovery mode is needed to roll them back if the load is overlapped. The article points to the \href{https://patents.google.com/patent/US5758051A}{US5758051A} patent with more details that could be worse to read later.
+\end{itemize}
+
 \end{document}
