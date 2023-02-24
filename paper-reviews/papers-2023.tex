@@ -100,4 +100,11 @@ A total of \total{citenum} papers read in the year.
     The article provides a nice overview of Transmeta Crusoe and IBM DAISY with some insides on the special-purpose underlying hardware. There is an overview of other binary translation systems including LaTTe JVM. There is a clear focus on speculative operations to be performed by Crusoe and DAISY binary translators. One optimization had a bit unclear benefits when I read the article --- the speculative loads performed by DAISY. While reading the article I only thought about the speculative operation as a cache warmup for the later reload. The problem here is that speculative loads could overlap with stores performed before the actual load should occur. To address this issue DAISY uses a \textbf{load-verify} operations that is insert to the location of the original load. The operation reloads the memory value and compares it with the speculatively pre-loaded one. Depending on the result DAISY either continues as normal or enters recovery mode. While writing the note I realized that the load speculation might allow other speculations to be performed and thus the recovery mode is needed to roll them back if the load is overlapped. The article points to the \href{https://patents.google.com/patent/US5758051A}{US5758051A} patent with more details that could be worse to read later.
 \end{itemize}
 
+\section*{Performance}
+\begin{itemize}
+    \item \cite{Yasin:TopDownCPUPerfAnalysis:2014}:
+
+    The paper proposes a top down performance analysis method for superscalar out-of-order processors. The paper discusses a couple of challenges for low-level CPU performance analysis; problems and limitation of the existing methods. The paper suggest a tree-like structure for the analysis. The top level of the hierarchy includes front end, bad speculations, retiring and frontend. Looking at specific part of the hierarchy allows to disregard events happening at other parts thus narrowing down the problem while moving to the leaves of the hierarchy. The author presented few usage examples of the methods and proposed changes to Intel's performance monitoring unit architecture.
+\end{itemize}
+
 \end{document}
