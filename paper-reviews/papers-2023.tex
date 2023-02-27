@@ -84,6 +84,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Gwennap:Centaur-AI:2019}:
 
     Centaur has developed an x86 processor with deep-learning accelerator --- Ncore. The accelerator has a typical design for the field of application: it's a VLIW architecture relying on traditional SIMD approach with smaller sized vector elements like INT8, BF16, etc. The architecture is 64 times wider that Intel's AVX-512. The x86 cores are alike low-end Skylake cores but it can achieve better neural network performance thanks to the accelerator. Centaur has also constructed a basic software stack that convert TensorFlow to an internal graph format that is later compiled into Ncore assembly - another typical approach for deep-learning accelerators. The article reports that so fat Centaur's software can only handle inference but not training.
+
+    \item \cite{Abadi:TensorFlow:2016}:
+
+    The article describes ideas and reasons that stay behind TensorFlow. Nowadays one can hardly imaging machine learning without TensorFlow. All the accelerators I know about have support for TensorFlow or aim to support it. To represent computations, TensorFlow uses a single dataflow graph where vertices represent operations (atomic units of computations) and edges represent input and output to a vertex. The dataflow graph can be broken into subgraphs and distributed between multiple servers for execution. Basic control flow is supported using \texttt{Switch} and \texttt{Merge} operations. The system provides support for CPUs, GPUs, Google TPUs and allows extensions for other hardware systems.
 \end{itemize}
 
 \section*{Virtual Machines}
