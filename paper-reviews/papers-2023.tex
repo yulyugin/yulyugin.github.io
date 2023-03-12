@@ -66,6 +66,9 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Colwell:Multiflow-VLIW:1987}:
 
     The paper describes a VLIW architecture developed by Multiflow Corporation. It is one of the VLIW pioneering designs. It is always enjoyable to read old papers about computer architecture trends and ideas; compare the old ideas and expectations with how it turned out now: <<a VLIW machine was expected to provide from ten to thirty times the performance of a more conventional machine built of the same implementation technology>>. A great comments for the citation would be something like: <<if only we would have smart enough compiler>>. Industry practice so far showed that VLIW could be an amazing architecture for some DSPs while a superscalar processor delivers better results for general purpose usage.
+
+    \item \cite{Rajwar:SpeculativeLockElision:2001}:
+
 \end{itemize}
 
 \section*{Autonomous Driving}
@@ -102,6 +105,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Altman:BT-Future:2001}:
 
     The article provides a nice overview of Transmeta Crusoe and IBM DAISY with some insides on the special-purpose underlying hardware. There is an overview of other binary translation systems including LaTTe JVM. There is a clear focus on speculative operations to be performed by Crusoe and DAISY binary translators. One optimization had a bit unclear benefits when I read the article --- the speculative loads performed by DAISY. While reading the article I only thought about the speculative operation as a cache warmup for the later reload. The problem here is that speculative loads could overlap with stores performed before the actual load should occur. To address this issue DAISY uses a \textbf{load-verify} operations that is insert to the location of the original load. The operation reloads the memory value and compares it with the speculatively pre-loaded one. Depending on the result DAISY either continues as normal or enters recovery mode. While writing the note I realized that the load speculation might allow other speculations to be performed and thus the recovery mode is needed to roll them back if the load is overlapped. The article points to the \href{https://patents.google.com/patent/US5758051A}{US5758051A} patent with more details that could be worse to read later.
+
+    \item \cite{Hamayun:StaticBT-VLIW:2013}:
+
+    One of the most confusing papers I read. Unclear why KVM is described in the paper what is the so <<native>> about that approach. I can see two well-known ideas in the paper --- cross-platform compilation and static binary translation. Main focus of the paper is on static binary translation for VLIW CPUs. There is a good description of VLIW weirdness like register dependencies withing the package and delay slots. The authors built a static binary translation that is capable of handling all the tricky VLIW peculiarities.
 \end{itemize}
 
 \section*{Performance}
