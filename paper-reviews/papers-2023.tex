@@ -69,6 +69,7 @@ A total of \total{citenum} papers read in the year.
 
     \item \cite{Rajwar:SpeculativeLockElision:2001}:
 
+    The paper describes Speculative Lock Elision --- CPU microarchitectural technique aimed to support transaction memory. The proposed technique suggests automatic detection and elision of lock acquire and release instructions if and only if a processor can guarantee atomic memory updates between the locks. No ISA level changes are required. The existing cache coherency mechanism can to be used to guarantee atomicity. The technique's behavior is similar to how a branch predictor speculation works --- assume that lock can be elided, elide the lock, roll-back if the assumption turned out to be wrong, commit the results otherwise. The roll-back can be achieved either using reorder buffer (ROB) or register checkpointing. The later allows larger critical sections to be speculated. Speculative Lock Elision supports nested locks --- only one (can be the outer one) of the locks is elided in that case. Intel has implemented the technique in its Hardware Lock Elision (HLE) extension that is well known for its bugginess. HLE is now deprecated and removed from the latest processors.
 \end{itemize}
 
 \section*{Autonomous Driving}
