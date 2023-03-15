@@ -19,3 +19,21 @@
   pages     = {576-581},
   volume    = {},
 }
+
+@inproceedings{Qin:ParallelJIT:2006,
+  author    = {Qin, Wei and D'Errico, Joseph and Zhu, Xinping},
+  title     = {A Multiprocessing Approach to Accelerate Retargetable and Portable Dynamic-Compiled Instruction-Set Simulation},
+  year      = {2006},
+  booktitle = {Proceedings of the 4th International Conference on Hardware/Software Codesign and System Synthesis},
+  abstract  = {Traditionally, instruction-set simulators (ISS's) are sequential programs running on individual processors. Besides the advances of simulation techniques, ISS's have been mainly driven by the continuously improving performance of single processors. However, since the focus of processor manufacturers is shifting from frequency scaling to multiprocessing, ISS developers need to seize this opportunity for further performance growth. This paper proposes a multiprocessing approach to accelerate one class of dynamic-compiled ISS's. At the heart of the approach is a simulation engine capable of mixed interpretative and compiled simulation. The engine selects frequently executed target code blocks and translates them into dynamically loaded libraries (DLLs), which are then linked to the engine at run time. While the engine performs simulation on one processor, the translation tasks are distributed among several assistant processors. Our experiment results using SPEC CINT2000 benchmarks show that this approach achieves on average 197 million instructions per second (MIPS) for the MIPS32 ISA and 133 MIPS for the ARM V4ISA. Compared with the uniprocessing configuration under the same general approach, multiprocessing offers higher performance and improved speed consistency. In addition, our approach is highly retargetable, portable and capable of simulating self-modifying code. To our best knowledge, this is the first reported approach that uses multiprocessing to accelerate functional simulation.},
+  address   = {New York, NY, USA},
+  doi       = {10.1145/1176254.1176302},
+  isbn      = {1595933700},
+  keywords  = {compiled simulation, instruction set simulator, retargetable},
+  location  = {Seoul, Korea},
+  numpages  = {6},
+  pages     = {193-198},
+  publisher = {Association for Computing Machinery},
+  series    = {CODES+ISSS '06},
+  url       = {https://doi.org/10.1145/1176254.1176302},
+}

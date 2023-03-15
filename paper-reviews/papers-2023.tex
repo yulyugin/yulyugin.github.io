@@ -110,6 +110,19 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Hamayun:StaticBT-VLIW:2013}:
 
     One of the most confusing papers I read. Unclear why KVM is described in the paper what is the so <<native>> about that approach. I can see two well-known ideas in the paper --- cross-platform compilation and static binary translation. Main focus of the paper is on static binary translation for VLIW CPUs. There is a good description of VLIW weirdness like register dependencies withing the package and delay slots. The authors built a static binary translation that is capable of handling all the tricky VLIW peculiarities.
+
+    \item \cite{Qin:ParallelJIT:2006}:
+
+    The paper proposes a parallel JIT-compilation technique for ISSes. The idea behind technique is rather primitive. Here is a short summary:
+
+    \begin{enumerate}
+        \item Interpreter runs and collects statistics about block usage.
+        \item Once a hot block is detected it is added to compilation queue.
+        \item Compilation workers run in parallel host threads. C++ code is generated for each block. GCC is used to compile the blocks to DLLs.
+        \item DLLs are loaded and used to simulate the block.
+    \end{enumerate}
+
+    Self-modifying code is supported through monitoring of writes to compiled blocks. The authors also added a DLL cache to avoid compilation overhead for subsequent runs of the same simulation. Easy to read article that would be a good reference for \herf{https://github.com/yulyugin/sim-lectures}{<<Fundamentals of Full-Platform Simulation>>} MIPT course.
 \end{itemize}
 
 \section*{Performance}
