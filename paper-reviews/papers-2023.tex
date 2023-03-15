@@ -132,4 +132,11 @@ A total of \total{citenum} papers read in the year.
     The paper proposes a top down performance analysis method for superscalar out-of-order processors. The paper discusses a couple of challenges for low-level CPU performance analysis; problems and limitation of the existing methods. The paper suggest a tree-like structure for the analysis. The top level of the hierarchy includes front end, bad speculations, retiring and frontend. Looking at specific part of the hierarchy allows to disregard events happening at other parts thus narrowing down the problem while moving to the leaves of the hierarchy. The author presented few usage examples of the methods and proposed changes to Intel's performance monitoring unit architecture.
 \end{itemize}
 
+\section*{Static Analysis}
+\begin{itemize}
+    \item \cite{Distefano:StaticAnalysisFB:2019}:
+
+    The paper presents Infer and Zoncolan (security analysis) --- static analysis tools developed and used by Facebook. On top of standard false positive and false negative metrics authors added fix rate metric measuring the proportion of reported issues that were actually fixed. One of the observation is that the fix rate gets closer to 70\% when the static analysis is applied during diff (pull request) time. Meanwhile, the fix rate is near zero when static analysis is applied once on the entire code base. The overall approach to development of the static analysis tools looks very reasonable to me including the initial ideas, integration and addition of new rules. I would definitely recommend to read this paper for anyone who is going to work on custom static analysis tools. So far the approach looks to be the most reasonable static analysis application I saw in the industrial projects I worked on. Infer is available as open source and I should definitely try it on current projects.
+\end{itemize}
+
 \end{document}
