@@ -36,7 +36,21 @@ A total of \total{citenum} papers read in the year.
 
     \item \cite{Eyre:DSP-Derby:2001}:
 
-    The article presents digital signal processor (DSP) design and development challenges. The author compares techniques used in DSPs with techniques typical for general-purpose processors. The article emphasizes DSP's requirement for predictable executing speed that is often more important than performance. The requirement is of course harder to fulfill with caches and out-of-order execution. VLIW, SIMD and highly compressed encodings are mentioned as an example of techniques prevailing in DPSs. There is also performance comparison of some DSPs with a superscalar processor that is based on FFT and FIR filter benchmarks.
+    The article presents digital signal processor's (DSP) design and development challenges. The author compares techniques used in DSPs with techniques typical for general-purpose processors. The article emphasizes DSP's requirement for predictable executing speed that is often more important than performance. The requirement is of course harder to fulfill with caches and out-of-order execution. VLIW, SIMD and highly compressed encodings are mentioned as an example of techniques prevailing in DPSs. There is also performance comparison of some DSPs with a superscalar processor that is based on FFT and FIR filter benchmarks.
+
+    \item \cite{Charles:TruboBoostEvaluation:2009}:
+
+    The article presents evaluation of Intel's Turbo Boost technology first introduce in Nehalem microarchitecture. The technology may increase the processor's frequency when load and temperature are low. SPEC CPU2006 is used as benchmark for the evaluation. Benchmark suites are classified as CPU-intensive and memory-intensive based on LLC cache-miss rate. The authors perform three kind of tests:
+
+    \begin{enumerate}
+        \item Isolation tests --- every benchmark runs in isolation with and without Turbo Boost to measure speedup that can be achieved through the frequency increase.
+        \item Paired tests --- pairs of the benchmarks run simultaneously to test if the process can still make effective use of Turbo Boost.
+        \item Saturation tests --- all processor cores are loaded with different combination of CPU- and memory-intensive benchmarks to test whether Turbo Boost activates when all cores are loaded.
+    \end{enumerate}
+
+    One interesting observation from the results is that for saturation tests maximum Turbo Boost activation is not always corresponds to the best overall performance of the system.
+
+    Another set of tests described in the paper is multi-threaded workloads from PARSEC and BLAST benchmark suits. The idea behind the tests is also pretty interesting: according to Amdahl's law speedup of parallel application is limited by its sequential component. The authors check whether Amdahl's law can be mitigated through the frequency increase during the sequential execution. There is a very interesting citation about that in the paper that is worse looking at later and is probably a good source for \href{https://github.com/yulyugin/mipt-parallel-computing}{<<MIPT parallel computing>> course}.
 \end{itemize}
 
 \section*{Compilers}
