@@ -69,6 +69,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Easson:FrobOS:2012}:
 
     The article describes the ideas behind VMware's minimalistic test operating system FrobOS. Tbe operating system is a great instrument for bare-metal hardware tests. The tooling around the OS also enables nice and fast testing for their hypervisor: simple ways to run port and run the tests between different CPU and hypervisor modes.
+
+    \cite{IntelHTTValidation}:
+
+    The article shares a story and decisions made during Intel's Hyper Threading Technology pre-silicon validation. Some implementation details of the technology are described as well. The amount of tests that needs to be performed explodes when going from single logical core system to the hyper threaded system. All the state now falls into four categories: duplicated, partitioned, entry tagged and fully shared. The four state categories together with new modes of operation lead to test explosion. One of the interesting solutions was to switch between logical threads for regular testing instead of of always testing both. The authors also made an interesting post mortem analysis of both issues discovered during pre-silicon validation and the issues found in silicon.
 \end{itemize}
 
 \section*{Computer Architecture}
