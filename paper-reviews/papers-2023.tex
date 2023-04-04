@@ -70,7 +70,7 @@ A total of \total{citenum} papers read in the year.
 
     The article describes the ideas behind VMware's minimalistic test operating system FrobOS. Tbe operating system is a great instrument for bare-metal hardware tests. The tooling around the OS also enables nice and fast testing for their hypervisor: simple ways to run port and run the tests between different CPU and hypervisor modes.
 
-    \cite{Burns:IntelHTTValidation:2002}:
+    \item \cite{Burns:IntelHTTValidation:2002}:
 
     The article shares a story and decisions made during Intel's Hyper Threading Technology pre-silicon validation. Some implementation details of the technology are described as well. The amount of tests that needs to be performed explodes when going from single logical core system to the hyper threaded system. All the state now falls into four categories: duplicated, partitioned, entry tagged and fully shared. The four state categories together with new modes of operation lead to test explosion. One of the interesting solutions was to switch between logical threads for regular testing instead of of always testing both. The authors also made an interesting post mortem analysis of both issues discovered during pre-silicon validation and the issues found in silicon.
 \end{itemize}
@@ -162,6 +162,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Yilmazer:ScalarWaving:2014}:
 
     The authors discovered that GPU programs contain significant portion of scalar instructions. 30\% for the GPU selected benchmarks in the paper. The papers states that scalar instructions are typically executed as SIMD with all vector elements having the same values. Thus, the same computation is performed redundantly. One of the solution for the problem is to run the calculations once and than broadcast the results in order to reduce power consumption on unnecessary operations. The authors suggested to statically detect scalar operations during compilations. One negative effect of this is reduced utilization of SIMD lanes. To improve utilization the  paper proposed scalar waving --- grouping of same scalar instructions processing different scalars into a single SIMD instruction. This grouping is suggest to be performed during runtime through by GPU itself. Further, the authors developed simultaneous scalar and SIMD group waving --- grouping and a SIMD instructions and scalar ware. GPU needs to be able to execute two different operations as a part of SIMD instruction in this case. The authors claim to achieve up to 25\% percent performance improvement for the selected benchmarks. The performance studies are performed on \href{https://github.com/gpgpu-sim}{GPGPU-Sim} simulator.
+
+    \item \cite{Fung:DynamicWrapGPUControlFlow:2007}:
+
+    The paper is focused on GPGPU control flow problems that represent general control flow issues with SIMD --- what should be done if control flow diverges for SIMD lines. The paper describes several possible solutions for the problem: scalar execution (more typical for CPUs), reconvergence at the immediate post-dominator, dynamic warp formation that is supposed to improve SIMD pipeline utilization. The authors show that reconvergence at the immediate post-dominator is not always the best choice. They propose an implementation of dynamic warp formation together with several heuristics that are supposed to define when the formed warps should be pushed for execution. The authors claim that dynamic warp formation improves performance by 20.7\% on average compared to reconvergence at the immediate post-dominator. They estimated that area increase because of the proposed hardware changes to be around 4.7\%.
 \end{itemize}
 
 \section*{Fault Isolation}
