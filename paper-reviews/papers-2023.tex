@@ -179,4 +179,11 @@ A total of \total{citenum} papers read in the year.
     The authors proposed a software technique aimed to isolate faults in third party software modules loaded as extension. The idea is to run both the main module and the submodules in one address space to avoid expansive RPC communication. Fault isolation is supposed to be achieved through binary patching which is implemented on compile time by the authors. Each modules has a dedicated part of the shared memory space. The modules are not supposed to access other module's memory regions. To achieve that every memory access or jump that uses indirect address is wrapped by a special instruction sequence ensuring isolation. Few registers are considered to be special purpose registers and thus reserved for use by the isolation mechanism. Trusted modules like the core module do not need to be modified and thus avoid the patching overhead. Intra module communication is supposed to be done through an intermediate memory space using special call mechanism. Operation is system should be modified to protect one module from closing resources like file descriptors of another module. The authors report one to two orders of magnitude performance improvement compared to existing at that moment RPC mechanisms.
 \end{itemize}
 
+\section*{Parallel Programming}
+\begin{itemize}
+    \item \cite{Thakur:MPIOptimization:2005}:
+
+    The article presents different high-performance implementations of collective MPI operations. The authors assume that the time to send similar package between any two nodes is the same and does not depend on number of concurrent communications. This is a very simple cost model but seems to be sufficient for the author's needs. The article is a good source for different one-to-all, all-to-one, all-to-all communication algorithms. Interesting but expected idea from the article is to use different communication algorithms depending on message size.
+\end{itemize}
+
 \end{document}
