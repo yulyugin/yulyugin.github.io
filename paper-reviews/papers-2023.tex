@@ -26,6 +26,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Patel:MARSS:2011}:
 
     The article is about Micro Architectural and System Simulator (MARSS). The simulator is constructed as a combination of QEMU and PTLSim. PTLSim and QEMU share the same processor structure which allows them to switch seamlessly thus providing a gear-shit capability for mixing functional and cycle-accurate execution. QEMU provides all the peripherals in the setup. The article uses term emulation for function models and simulation for cycle-accurate models. This is another view on this controversial topic that can be a reference for the \href{https://github.com/yulyugin/sim-lectures}{<<Fundamentals of Full-Platform Simulation>>} course.
+
+    \item \cite{Moore:Imperas-Custom-RISCV:2019}:
+
+    The article describes a standard way of adding new processor instructions purely based on instruction count: find a pattern, add instruction, makes sure it works, measure instruction count to estimate how performance changes, repeat it needed. The approach is applied to RISC-V processors using IMPERAS ISS. Could be a good reference for students who are not aware how this could be done.
 \end{itemize}
 
 \section*{Processors}
@@ -172,11 +176,15 @@ A total of \total{citenum} papers read in the year.
     The paper is focused on GPGPU control flow problems that represent general control flow issues with SIMD --- what should be done if control flow diverges for SIMD lines. The paper describes several possible solutions for the problem: scalar execution (more typical for CPUs), reconvergence at the immediate post-dominator, dynamic warp formation that is supposed to improve SIMD pipeline utilization. The authors show that reconvergence at the immediate post-dominator is not always the best choice. They propose an implementation of dynamic warp formation together with several heuristics that are supposed to define when the formed warps should be pushed for execution. The authors claim that dynamic warp formation improves performance by 20.7\% on average compared to reconvergence at the immediate post-dominator. They estimated that area increase because of the proposed hardware changes to be around 4.7\%.
 \end{itemize}
 
-\section*{Fault Isolation}
+\section*{Software Attacks}
 \begin{itemize}
     \item \cite{Wahbe:SoftwareFaultIsolation:1993}:
 
     The authors proposed a software technique aimed to isolate faults in third party software modules loaded as extension. The idea is to run both the main module and the submodules in one address space to avoid expansive RPC communication. Fault isolation is supposed to be achieved through binary patching which is implemented on compile time by the authors. Each modules has a dedicated part of the shared memory space. The modules are not supposed to access other module's memory regions. To achieve that every memory access or jump that uses indirect address is wrapped by a special instruction sequence ensuring isolation. Few registers are considered to be special purpose registers and thus reserved for use by the isolation mechanism. Trusted modules like the core module do not need to be modified and thus avoid the patching overhead. Intra module communication is supposed to be done through an intermediate memory space using special call mechanism. Operation is system should be modified to protect one module from closing resources like file descriptors of another module. The authors report one to two orders of magnitude performance improvement compared to existing at that moment RPC mechanisms.
+
+    \item \cite{Murdock:Plundervolt:2020}:
+
+    The authors discovered an attack vector to Intel SGX through processor undervolting which is available on modern processors via undocumented MSRs. In Intel SGX's model, both OS and physical access are considered to be untrusted. In my opinion this is enough to make the technology rather questionable. This paper proves my doubts about the technology. Intel's response to the problem was quite expected - simply hide the undocumented voltage control MSRs thus hiding the problem without actually fixing it. I admit, it must be a pain to protect against such kind of attacks. Microsoft has a nice software guarding against overflows that may be in this particular case caused by faulty multiplication --- divide the result and compare it with then incoming operands.
 \end{itemize}
 
 \section*{Parallel Programming}
