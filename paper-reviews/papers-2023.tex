@@ -122,6 +122,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Abadi:TensorFlow:2016}:
 
     The article describes ideas and reasons that stay behind TensorFlow. Nowadays one can hardly imaging machine learning without TensorFlow. All the accelerators I know about have support for TensorFlow or aim to support it. To represent computations, TensorFlow uses a single dataflow graph where vertices represent operations (atomic units of computations) and edges represent input and output to a vertex. The dataflow graph can be broken into subgraphs and distributed between multiple servers for execution. Basic control flow is supported using \texttt{Switch} and \texttt{Merge} operations. The system provides support for CPUs, GPUs, Google TPUs and allows extensions for other hardware systems.
+
+    \item \cite{Micikevicius:FP8ForDL:2022}
+
+    The article describes two new 8-bit floating point formats: E4M3 and E5M2. The formats are a natural progression of the current trend of data type shrinking that is aimed to improve computational efficiency of machine learning training and inference. One of the formats --- E5M2 --- can be trivially converted to FP16. In a similar way that bfloat16 can be converted to FP32. The authors show that results of training and inference done using the new formats effectively matches the results achieved by 16-bit formats.
 \end{itemize}
 
 \section*{Virtual Machines}
