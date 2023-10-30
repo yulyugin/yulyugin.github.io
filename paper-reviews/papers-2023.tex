@@ -123,13 +123,17 @@ A total of \total{citenum} papers read in the year.
 
     The article describes ideas and reasons that stay behind TensorFlow. Nowadays one can hardly imaging machine learning without TensorFlow. All the accelerators I know about have support for TensorFlow or aim to support it. To represent computations, TensorFlow uses a single dataflow graph where vertices represent operations (atomic units of computations) and edges represent input and output to a vertex. The dataflow graph can be broken into subgraphs and distributed between multiple servers for execution. Basic control flow is supported using \texttt{Switch} and \texttt{Merge} operations. The system provides support for CPUs, GPUs, Google TPUs and allows extensions for other hardware systems.
 
-    \item \cite{Micikevicius:FP8ForDL:2022}
+    \item \cite{Micikevicius:FP8ForDL:2022}:
 
     The article describes two new 8-bit floating point formats: E4M3 and E5M2. The formats are a natural progression of the current trend of data type shrinking that is aimed to improve computational efficiency of machine learning training and inference. One of the formats --- E5M2 --- can be trivially converted to FP16. In a similar way that bfloat16 can be converted to FP32. The authors show that results of training and inference done using the new formats effectively matches the results achieved by 16-bit formats.
 
-    \item \cite{Vaswani:Attention:2023}
+    \item \cite{Vaswani:Attention:2023}:
 
     The article proposes the Transformer machine learning network architecture that is solely based on attention mechanisms. The authors show that the new models are superior compared to recurrent or conventional neural networks when applied to machine translation tasks.
+
+    \item \cite{Dao:FlashAttention:2022}:
+
+    The article proposes FlashAttention, an IO-aware exact attention algorithm focused on reducing of read/write accesses between GPU on-chip SRAM and high bandwidth memory (HBM). The authors analyze IO complexity of the algorithm, showing that it required fewer HBM accesses than standard attention algorithm. The article also extends FlashAttention to block-sparse attention, an approximate attention algorithm. FlashAttention algorithm is based on kernel fusion (most common approach to accelerate memory-bound operations by loading data from HDM once and applying it to several operators, instead of loading it multiple times for each operator) and tiling (computation using blocks instead of the full dataset). The authors demonstrated both training speed and accuracy/perplexity improvements because of larger context allowed by faster training.
 \end{itemize}
 
 \section*{Virtual Machines}
