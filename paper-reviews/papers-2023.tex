@@ -203,11 +203,15 @@ A total of \total{citenum} papers read in the year.
     The authors discovered an attack vector to Intel SGX through processor undervolting which is available on modern processors via undocumented MSRs. In Intel SGX's model, both OS and physical access are considered to be untrusted. In my opinion this is enough to make the technology rather questionable. This paper proves my doubts about the technology. Intel's response to the problem was quite expected - simply hide the undocumented voltage control MSRs thus hiding the problem without actually fixing it. I admit, it must be a pain to protect against such kind of attacks. Microsoft has a nice software guarding against overflows that may be in this particular case caused by faulty multiplication --- divide the result and compare it with then incoming operands.
 \end{itemize}
 
-\section*{Parallel Programming}
+\section*{Collective Communication}
 \begin{itemize}
     \item \cite{Thakur:MPIOptimization:2005}:
 
     The article presents different high-performance implementations of collective MPI operations. The authors assume that the time to send similar package between any two nodes is the same and does not depend on number of concurrent communications. This is a very simple cost model but seems to be sufficient for the author's needs. The article is a good source for different one-to-all, all-to-one, all-to-all communication algorithms. Interesting but expected idea from the article is to use different communication algorithms depending on message size.
+
+    \item \cite{Rashidi:AstraSim:2020}:
+
+    The article present ASTra-Sim --- simulator and modeling approach aimed to navigate SW/HW design space of distributed deep learning training platforms. The paper justifies the need of such simulation defining some basic concepts used in the field. ASTra-Sim is based on Garnet (part of GEM5) network simulator and uses event-driven execution model. ASTra-Sim implements topology-aware collective operations and different parallelism approaches of training. ASTra-Sim provides interfaces for compute and network simulators allowing to replace the default implementation with other simulators. The research is focused on network topologies and have description for how different communication operations can be mapped on the studied topologies. The study is focused on torus and all-to-all topologies and hierarchical versions of the above.
 \end{itemize}
 
 \end{document}
