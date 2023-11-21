@@ -134,6 +134,14 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Dao:FlashAttention:2022}:
 
     The article proposes FlashAttention, an IO-aware exact attention algorithm focused on reducing of read/write accesses between GPU on-chip SRAM and high bandwidth memory (HBM). The authors analyze IO complexity of the algorithm, showing that it required fewer HBM accesses than standard attention algorithm. The article also extends FlashAttention to block-sparse attention, an approximate attention algorithm. FlashAttention algorithm is based on kernel fusion (most common approach to accelerate memory-bound operations by loading data from HDM once and applying it to several operators, instead of loading it multiple times for each operator) and tiling (computation using blocks instead of the full dataset). The authors demonstrated both training speed and accuracy/perplexity improvements because of larger context allowed by faster training.
+
+    \item \cite{Rashidi:AstraSim:2020}:
+
+    The article present ASTra-Sim --- simulator and modeling approach aimed to navigate SW/HW design space of distributed deep learning training platforms. The paper justifies the need of such simulation defining some basic concepts used in the field. ASTra-Sim is based on Garnet (part of GEM5) network simulator and uses event-driven execution model. ASTra-Sim implements topology-aware collective operations and different parallelism approaches of training. ASTra-Sim provides interfaces for compute and network simulators allowing to replace the default implementation with other simulators. The research is focused on network topologies and have description for how different communication operations can be mapped on the studied topologies. The study is focused on torus and all-to-all topologies and hierarchical versions of the above. For compute part the authors consider TPU-like hardware and only take GEMM modeling into account (all other operators considered to take parametrized delay).
+
+    \item \cite{Won:ASTRA-sim2.0:2023}:
+
+    The article presents extension to ASTRA-sim simulator that is aimed to navigate SH/HW design space of distributed deep learning training platforms. Compared to the original design of ASTRA-sim the authors switch from basically being cycle-accurate network simulator to an analytical performance simulator. The simulator splits distributed training into three layers: workload, system and network. Multi-dimensional network designs based on three basic topologies (ring, fully connected and switched) are supported. Compute simulation is done in roofline matter. Memory disaggregation modelling (fundamental solution to overcome capacity of a single unit) is added to the simulator.
 \end{itemize}
 
 \section*{Virtual Machines}
@@ -208,10 +216,6 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Thakur:MPIOptimization:2005}:
 
     The article presents different high-performance implementations of collective MPI operations. The authors assume that the time to send similar package between any two nodes is the same and does not depend on number of concurrent communications. This is a very simple cost model but seems to be sufficient for the author's needs. The article is a good source for different one-to-all, all-to-one, all-to-all communication algorithms. Interesting but expected idea from the article is to use different communication algorithms depending on message size.
-
-    \item \cite{Rashidi:AstraSim:2020}:
-
-    The article present ASTra-Sim --- simulator and modeling approach aimed to navigate SW/HW design space of distributed deep learning training platforms. The paper justifies the need of such simulation defining some basic concepts used in the field. ASTra-Sim is based on Garnet (part of GEM5) network simulator and uses event-driven execution model. ASTra-Sim implements topology-aware collective operations and different parallelism approaches of training. ASTra-Sim provides interfaces for compute and network simulators allowing to replace the default implementation with other simulators. The research is focused on network topologies and have description for how different communication operations can be mapped on the studied topologies. The study is focused on torus and all-to-all topologies and hierarchical versions of the above. For compute part the authors consider TPU-like hardware and only take GEMM modeling into account (all other operators considered to take parametrized delay).
 \end{itemize}
 
 \end{document}
