@@ -10,6 +10,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Poli:Hyena:2023}:
 
     The paper proposes Hyena --- a subquadratic replacement for attention constructed using long convolutions (FFT in particular). Hyena is aiming to solve Transformer scaling problem. Transformers are currently domination in deep learning. However, Transformers are based on the attention operator that exhibits quadratic computational complexity in sequence length which in turn is limiting context available to the model. This fact makes breaking the quadratic barrier a key step forwards new deep learning capabilities.
+
+    \item \cite{Fu:FlashFFTConv:2024}:
+
+    FlashFFTConv algorithm proposed in the paper tries to address major bottlenecks related to convolutional models with long filters --- poor utilization of specialized matrix multiplication units and expensive I/O between layers of memory hierarchy. The major bottleneck is caused by the Fast Fourier Transform. Convolutional models lag behind the most Transformers even though FFT allows to run in O(N log N) instead of  O(N^2) common Transformers. FlashFFTConv uses a matrix decomposition that computes FFT using matrix multiplication units and enables kernel fusion for long sequences that in turn allows to reduce the expensive I/O operations.
 \end{itemize}
 
 \end{document}
