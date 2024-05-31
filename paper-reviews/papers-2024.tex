@@ -14,6 +14,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Fu:FlashFFTConv:2024}:
 
     FlashFFTConv algorithm proposed in the paper tries to address major bottlenecks related to convolutional models with long filters --- poor utilization of specialized matrix multiplication units and expensive I/O between layers of memory hierarchy. The major bottleneck is caused by the Fast Fourier Transform. Convolutional models lag behind the most Transformers even though FFT allows to run in O(N log N) instead of  O(N^2) common Transformers. FlashFFTConv uses a matrix decomposition that computes FFT using matrix multiplication units and enables kernel fusion for long sequences that in turn allows to reduce the expensive I/O operations.
+
+    \item \cite{Dao:Monarch:2022}:
+
+    The paper proposes a class of hardware efficient Monarch matrices. The matrices are proposed as a replacement for dense weight matrices in order to reduce compute/memory requirements of large neural networks. Monarch matrices are block diagonal matrices that can represent many fast transforms such as Fourier or convolution. The authors show that dense-to-sparse conversion has an analytically optimal solution. A Monarch matrix is described by $2n\sqrt{n}$ parameters instead $n^2$ for dense matrix. Monarch parametrization allows efficient utilization of batch matrix multiply units available in contemporary hardware such as GPUs. The parametrization allows to achieve up to $2x$ speedup compared to dense matrix multiply. Algorithm proposed in the paper allows to fine-tune a pre-trained model into a model with Monarch weight matrices. The work presented in the paper is a step towards doing structural matrices more practical.
 \end{itemize}
 
 \end{document}
