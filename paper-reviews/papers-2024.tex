@@ -22,6 +22,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Shoeybi:MegatronLM:2020}:
 
     The article describes techniques for training large transformer models that is based on intra-layer model parallel approach. The approach doesn't require a complier or library changes and is only based on PyTorch level changes to a model. The approach is demonstrated by increasing number of parameters for existing transformer models. The main idea of the technique is to partition GEMM in a way that allows non-linear functions to be applied to each partition independently. The technique is aimed to reduce number of communications (reductions) introduces py partitioning. The technique is orthogonal to data parallelism thus allowing combination of the two. The approach has demonstrated near linear scaling.
+
+    \item \cite{Rouhani:Microscaling:2023}:
+
+    The paper investigates performance on narrow-bit data formats for machine learning applications. Narrow-bit data types are aimed to reduce computational and storage costs of the applications. Mixed precision calculations are considered in the paper: GeMMs performed in the narrow-bit data format and all the vector calculations are preformed in Bfloat16 or FP32. The authors showed that both model training and model inference performance doesn't downgrade that much when going to narrow-bit formats. INT8 almost matched the baseline FP32 in experiments done by the paper. The results demonstrated that training with MXFP4 weights and MXFP6 activations incurs only a minor penalty in model performance loss.
 \end{itemize}
 
 \end{document}
