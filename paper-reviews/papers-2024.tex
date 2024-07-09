@@ -26,6 +26,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Rouhani:Microscaling:2023}:
 
     The paper investigates performance on narrow-bit data formats for machine learning applications. Narrow-bit data types are aimed to reduce computational and storage costs of the applications. Mixed precision calculations are considered in the paper: GeMMs performed in the narrow-bit data format and all the vector calculations are preformed in Bfloat16 or FP32. The authors showed that both model training and model inference performance doesn't downgrade that much when going to narrow-bit formats. INT8 almost matched the baseline FP32 in experiments done by the paper. The results demonstrated that training with MXFP4 weights and MXFP6 activations incurs only a minor penalty in model performance loss.
+
+    \item \cite{Devlin:Bert:2019}:
+
+    The paper presents BERT --- language model based on multi-layer bidirectional transformer. BERT training consists of two parts: pre-training and fine-tuning. Pre-training is done on unlabeled data. For fine-tuning the model is first initialized with pre-trained parameters and then all the parameters are fine-tuned using labeled data from the target tasks. Fine-tuning is relatively inexpensive compared to pre-training. BERT pre-training is done using "masked LM" approach --- random words in a text sequenced are masked and the language model is trained to predict them correctly thus allowing to obtain bidirectional model. To understand dependencies between sentences, the model is trained on labeled sentence pairs that are related (second sentence is following the first one in the original text) and labeled as "next" in 50\% cases and not related (second sentence is random) and labeled as "not next" in the other 50\% cases.
 \end{itemize}
 
 \end{document}
