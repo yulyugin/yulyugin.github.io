@@ -30,6 +30,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Devlin:Bert:2019}:
 
     The paper presents BERT --- language model based on multi-layer bidirectional transformer. BERT training consists of two parts: pre-training and fine-tuning. Pre-training is done on unlabeled data. For fine-tuning the model is first initialized with pre-trained parameters and then all the parameters are fine-tuned using labeled data from the target tasks. Fine-tuning is relatively inexpensive compared to pre-training. BERT pre-training is done using "masked LM" approach --- random words in a text sequenced are masked and the language model is trained to predict them correctly thus allowing to obtain bidirectional model. To understand dependencies between sentences, the model is trained on labeled sentence pairs that are related (second sentence is following the first one in the original text) and labeled as "next" in 50\% cases and not related (second sentence is random) and labeled as "not next" in the other 50\% cases.
+
+    \item \cite{Dao:FlashAttentionV2:2023}:
+
+    The paper presents an improved version of Flash Attention algorithm. The main change include: 1. reduced number of non-matmul FLOPs (matmul throughput can be up to 16X higher than non-matmul throughput); 2. parallelization along sequence length dimension in both forward and backward passes; 3. work partitioning aimed to reduce communication and shared memory accesses. FlashAttentionV2 is claimed to be around 2X faster than FlashAttention.
 \end{itemize}
 
 \end{document}
