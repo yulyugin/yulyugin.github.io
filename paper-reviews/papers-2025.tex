@@ -4,9 +4,12 @@
 
 A total of \total{citenum} papers read in the year.
 
-
 \section*{Machine Learning}
 \begin{itemize}
+    \item \cite{DeepSeekAI:2025:DeepSeekV3}:
+
+    The report presents DeepSeek-V3 model architecture. The key difference from the Transformer architecture are: using Multi-Head Latent Attention (MLA) instead of MHA; using Mixture of Experts (MoE) instead of Feed Forward Network. DeepSeek-V3 MoE consists of shared and routed experts. Every token will run through the shared experts and select a few routed once. Each token may potentially end up using completely different routed experts. MLA implementation is aimed to reduce KV-cache usage by having a single shared cache for all heads. It may sound similar to Grouped Query Attention (GQA) but instead of compressing information from multiple heads into one, MLA moves per-head key and value information to per-head query thus only having the common for all heads information in keys and values. The authors also introduce Multi-Token Prediction (MTP) module that is used for training in the original work but can potentially be used for speculatively predicting several tokens in one run of the model.
+
     \item \cite{Behrouz:Titans:2024}:
 
     The authors present Titans --- a new machine learning model architecture that incorporates long-term memory with forgetting in order to be able to handle very large context windows. A forgetting mechanism is added to the model to avoid memory overflows. Long-term memory is added as a context to the current input sequence.
