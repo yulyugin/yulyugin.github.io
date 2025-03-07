@@ -19,4 +19,11 @@ A total of \total{citenum} papers read in the year.
     The article presents Mamba model architecture that is aimed to address Transformer's computational inefficiency on long sequence lengths. The authors claim that the key weakness of the existing subquadratic-time architectures is inability to perform context-based reasoning. The mentioned problem is addressed by letting the structured state space model (SSM) parameters be functions of the input thus allowing the model to selectively propagate and forget information along the sequence length based on the current token. Mamba is based on these selective SSMs and requires neither attention nor MLP blocks. As results Mamba inference can scale linearly with sequence length. The key ability of Mamba is selectivity --- context-aware way to focus on or filter out inputs info sequential state. The authors achieve efficient utilization of the existing hardware through standard techniques: kernel fusion, parallel scan and recomputation.
 \end{itemize}
 
+\section*{Performance}
+\begin{itemize}
+    \item \cite{Jacobs:DataBasePerformance:2009}:
+    
+    The article highlights optimization challenges that database developers face while working on big data analysis. The author demonstrates performance drawbacks of reading large databases for different kind of analyses. The article is largely focused on efficient usage of hardware capabilities: random vs. sequential access to storage devices. There is a good diagram that compares random and sequential accesses of hard drives, SSDs and DRAM. The author also shows few possible database architecture focusing on possible read requests that are supposed to be serviced by the database. There is also a good definition of "big data" in the very end of the paper.
+\end{itemize}
+
 \end{document}
