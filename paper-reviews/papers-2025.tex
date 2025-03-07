@@ -13,6 +13,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Behrouz:Titans:2024}:
 
     The authors present Titans --- a new machine learning model architecture that incorporates long-term memory with forgetting in order to be able to handle very large context windows. A forgetting mechanism is added to the model to avoid memory overflows. Long-term memory is added as a context to the current input sequence.
+
+    \item \cite{Gu:Mamba:2024}:
+
+    The article presents Mamba model architecture that is aimed to address Transformer's computational inefficiency on long sequence lengths. The authors claim that the key weakness of the existing subquadratic-time architectures is inability to perform context-based reasoning. The mentioned problem is addressed by letting the structured state space model (SSM) parameters be functions of the input thus allowing the model to selectively propagate and forget information along the sequence length based on the current token. Mamba is based on these selective SSMs and requires neither attention nor MLP blocks. As results Mamba inference can scale linearly with sequence length. The key ability of Mamba is selectivity --- context-aware way to focus on or filter out inputs info sequential state. The authors achieve efficient utilization of the existing hardware through standard techniques: kernel fusion, parallel scan and recomputation.
 \end{itemize}
 
 \end{document}
