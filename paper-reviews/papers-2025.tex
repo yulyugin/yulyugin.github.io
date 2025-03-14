@@ -17,12 +17,16 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Gu:Mamba:2024}:
 
     The article presents Mamba model architecture that is aimed to address Transformer's computational inefficiency on long sequence lengths. The authors claim that the key weakness of the existing subquadratic-time architectures is inability to perform context-based reasoning. The mentioned problem is addressed by letting the structured state space model (SSM) parameters be functions of the input thus allowing the model to selectively propagate and forget information along the sequence length based on the current token. Mamba is based on these selective SSMs and requires neither attention nor MLP blocks. As results Mamba inference can scale linearly with sequence length. The key ability of Mamba is selectivity --- context-aware way to focus on or filter out inputs info sequential state. The authors achieve efficient utilization of the existing hardware through standard techniques: kernel fusion, parallel scan and recomputation.
+
+    \item \cite{Hu:LoRA:2021}:
+
+    The article presents LoRA (Low-Rank Adaptation) technique for large language models. The technique is aimed to speedup fine-tuning and inference of the fine-tuned model. Traditionally, fine-tuning is used to update weights of a model pre-trained on a large set of generic data in order to specialize the model to handle a specific task. Basically it is a retraining of a generic model on a dataset specific for a desired task. With large language model it poses an obvious issue --- the fine-tuned model has the same number of parameters as the original model which makes the retraining task expensive and long. The main idea of LoRA is to freeze the pre-trained model weights and inject additional trainable rank decomposition matrices into the model in order to greatly reduce the number of trainable parameters. This approach allows easy switch of the model in production environment --- only the smaller additional matrices need to be switched. It is also possible to merge the trainable matrices into the original pre-trained model weights to avoid introducing extra latency during inference. The LoRA matrices consist of down projection from the original dimension to a small LoRA rank (the authors showed that even rank of two can be efficient) and up projection back to the original dimension. The high level idea is that the LoRA rank will record information specific for a desired task. The paper shows that it is preferable to adopt more weight matrices than to adopt a single weight matrix with a larger rank.
 \end{itemize}
 
 \section*{Performance}
 \begin{itemize}
     \item \cite{Jacobs:DataBasePerformance:2009}:
-    
+
     The article highlights optimization challenges that database developers face while working on big data analysis. The author demonstrates performance drawbacks of reading large databases for different kind of analyses. The article is largely focused on efficient usage of hardware capabilities: random vs. sequential access to storage devices. There is a good diagram that compares random and sequential accesses of hard drives, SSDs and DRAM. The author also shows few possible database architecture focusing on possible read requests that are supposed to be serviced by the database. There is also a good definition of "big data" in the very end of the paper.
 \end{itemize}
 
