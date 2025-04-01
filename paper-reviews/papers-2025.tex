@@ -25,6 +25,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Mattson:MLPerfTraining:2020}:
 
     The paper present MLPerf training benchmark and describes challenges that are rather unique for machine learning workloads: stochastic nature of the training task; necessity to train to the completion to be able to compare model quality. For example, lower data precision from FP32 to BF16 will definitely improve training throughput but it may require a lot more iterations to complete the training task (achieve similar model quality). The benchmark includes a set of model architectures aimed to solve the most common machine learning tasks including image classification, object detection, translation (both transformer and RNN), etc.
+
+    \item \cite{Korthikanti:SequenceParallel:2022}:
+
+    The paper presents sequence parallel and selective activation recomputation techniques. The techniques are aimed to accelerate training of large Transformer models by reducing activation recomputation. The sequence parallel technique extends Megatron-LM idea by running previously sequential parts in sequence parallel manner. Basically, the Transformer layer is split into four interchanging tensor parallel and sequence parallel block. GEMMs run using tensor parallel while layer norm and dropout run using sequence parallel. Interesting to note that sequence parallel does not add any extra communication overhead because communication required for tensor parallel already does all operations needed for sequence parallel part. Ring all-reduce (required for tensor parallel) is composed of reduce-scatter and all-gather (both required for sequence parallel). One downside is that execution of reduce-scatter and all-gather combined is slower than all-reduce alone. In general, the paper can be used as a great source to get an idea of different model parallelization techniques.
 \end{itemize}
 
 \section*{Performance}
