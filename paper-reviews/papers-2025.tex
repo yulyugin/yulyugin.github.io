@@ -29,6 +29,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Korthikanti:SequenceParallel:2022}:
 
     The paper presents sequence parallel and selective activation recomputation techniques. The techniques are aimed to accelerate training of large Transformer models by reducing activation recomputation. The sequence parallel technique extends Megatron-LM idea by running previously sequential parts in sequence parallel manner. Basically, the Transformer layer is split into four interchanging tensor parallel and sequence parallel block. GEMMs run using tensor parallel while layer norm and dropout run using sequence parallel. Interesting to note that sequence parallel does not add any extra communication overhead because communication required for tensor parallel already does all operations needed for sequence parallel part. Ring all-reduce (required for tensor parallel) is composed of reduce-scatter and all-gather (both required for sequence parallel). One downside is that execution of reduce-scatter and all-gather combined is slower than all-reduce alone. In general, the paper can be used as a great source to get an idea of different model parallelization techniques.
+
+    \item \cite{Wang:KvCacheDrop:2025}:
+
+    The paper describes an idea to optimize KV-cache size and attention calculations performed during decode (token generation) stage. The compressed version of KV-cache created during prefill (cache generation) stage consists of K and V results for fixed number of initial (first in input sequence) tokens, fixed number of recent tokens, last token and top-k of all the tokens in between initial initial and recent. The general idea is that initial and recent token are important and top-k selection can keep all the other important information while dropping other. Only recent tokens and last token in the KV-cache are getting updated during decode stage. Recent tokens acting like a ring buffer. Initial tokens and top-k stay the same. Thus KV-cache size always stays the same.
 \end{itemize}
 
 \section*{Performance}
