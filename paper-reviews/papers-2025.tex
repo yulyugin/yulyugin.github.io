@@ -33,6 +33,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Wang:KvCacheDrop:2025}:
 
     The paper describes an idea to optimize KV-cache size and attention calculations performed during decode (token generation) stage. The compressed version of KV-cache created during prefill (cache generation) stage consists of K and V results for fixed number of initial (first in input sequence) tokens, fixed number of recent tokens, last token and top-k of all the tokens in between initial initial and recent. The general idea is that initial and recent token are important and top-k selection can keep all the other important information while dropping other. Only recent tokens and last token in the KV-cache are getting updated during decode stage. Recent tokens acting like a ring buffer. Initial tokens and top-k stay the same. Thus KV-cache size always stays the same.
+
+    \item \cite{Liu:ScalingLawsRoPE:2024}:
+
+    The paper describes how Rotary Position Embedding (RoPE) is used by Transformer models to discern positional information in the input sequence. The authors studied extrapolation capabilities of Large Language Models based on RoPE with focus on modifications to rotary base. The paper proposed "Scaling Laws of RoPE-based Extrapolation", a framework to describe relations between the extrapolation performance and rotary base values as well as tunning context length.
 \end{itemize}
 
 \section*{Performance}
