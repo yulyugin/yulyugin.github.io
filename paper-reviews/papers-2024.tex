@@ -21,7 +21,7 @@ A total of \total{citenum} papers read in the year.
 
     \item \cite{Shoeybi:MegatronLM:2020}:
 
-    The article describes techniques for training large transformer models that is based on intra-layer model parallel approach. The approach doesn't require a complier or library changes and is only based on PyTorch level changes to a model. The approach is demonstrated by increasing number of parameters for existing transformer models. The main idea of the technique is to partition GEMM in a way that allows non-linear functions to be applied to each partition independently. The technique is aimed to reduce number of communications (reductions) introduces py partitioning. The technique is orthogonal to data parallelism thus allowing combination of the two. The approach has demonstrated near linear scaling.
+    The article describes techniques for training large transformer models that is based on intra-layer model parallel approach. The approach doesn't require a compiler or library changes and is only based on PyTorch level changes to a model. The approach is demonstrated by increasing number of parameters for existing transformer models. The main idea of the technique is to partition GEMM in a way that allows non-linear functions to be applied to each partition independently. The technique is aimed to reduce number of communications (reductions) introduces py partitioning. The technique is orthogonal to data parallelism thus allowing combination of the two. The approach has demonstrated near linear scaling.
 
     \item \cite{Rouhani:Microscaling:2023}:
 
