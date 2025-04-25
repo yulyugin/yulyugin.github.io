@@ -41,6 +41,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Luong:AttentionNMT:2015}:
 
     The authors present earlier attention-based models for machine translation tasks. The paper considers global and local attention approaches. The global approach attends to all words in the input sequence while the local one only looks at a subset of input words at a time. The article proposes and compares several mechanisms to decide what words in input sequence to attend to for the local attention approach. The resulting model yields a new state-of-the-art result in English to German translation task.
+
+    \item \cite{Chen:AdaComp:2018}:
+
+    The paper presents Adaptive Residual Gradient Compression (AdaComp) scheme that is based on Local Selection (LS) of gradient residuals. The main difference from LS is that AdaComp automatically adjust compression rate depending local configuration that includes number of learners, neural network architecture, layer types, mini-batch sizes and other parameters. Thus AdaComp provides soft compression threshold (allowing to self-adjust the compression rate) compared to LS that has the threshold as a fix parameter. The authors managed to achieve $~200X$ compression rate for fully-connected and recurrent layers, and $~40X$ compression rate for convolutional layers.
 \end{itemize}
 
 \section*{Performance}
