@@ -45,6 +45,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Chen:AdaComp:2018}:
 
     The paper presents Adaptive Residual Gradient Compression (AdaComp) scheme that is based on Local Selection (LS) of gradient residuals. The main difference from LS is that AdaComp automatically adjust compression rate depending local configuration that includes number of learners, neural network architecture, layer types, mini-batch sizes and other parameters. Thus AdaComp provides soft compression threshold (allowing to self-adjust the compression rate) compared to LS that has the threshold as a fix parameter. The authors managed to achieve $~200X$ compression rate for fully-connected and recurrent layers, and $~40X$ compression rate for convolutional layers.
+
+    \item \cite{Sutskever:Seq2seq:2014}:
+
+    The paper presents LSTM-based (Long Short-Term Memory) sequence to sequence model for machine translation. The main idea is to first translate \textit{reversed} input sequence to an intermediate fixed dimensioned vector representation and then translate the acquired representation to the target language. The input sequence is reversed to get shorter distance between input and target words during training. The resulting model performed better than advanced Statistical Machine Translation (SMT) system.
 \end{itemize}
 
 \section*{Performance}
