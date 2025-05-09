@@ -49,6 +49,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Sutskever:Seq2seq:2014}:
 
     The paper presents LSTM-based (Long Short-Term Memory) sequence to sequence model for machine translation. The main idea is to first translate \textit{reversed} input sequence to an intermediate fixed dimensioned vector representation and then translate the acquired representation to the target language. The input sequence is reversed to get shorter distance between input and target words during training. The resulting model performed better than advanced Statistical Machine Translation (SMT) system.
+
+    \item \cite{Mudigere:MetaDLRMTraining:2022}:
+
+    The paper present Neo (software) and ZionEX (hardware) systems co-designed for Deep Learning Recommendation Model (DLRM) training. The very interesting feature of the DLRMs is that the models use lots of data-intensive embedding operators compared to mostly compute-intensive operations in conventional Deep Neural Networks (DNNs). Existing software and hardware solutions are typically targeting DNNs. Such frameworks are optimized for compute-intense workloads and miss critical optimizations for data-intense embedding operators. The authors' solution includes 4D parallelism (table-wise, row-wise, column-wise and data), high-performance embedding computation through fused kernels and special hardware design to achieve better communication and memory access speed.
 \end{itemize}
 
 \section*{Performance}
