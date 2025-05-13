@@ -53,6 +53,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Mudigere:MetaDLRMTraining:2022}:
 
     The paper present Neo (software) and ZionEX (hardware) systems co-designed for Deep Learning Recommendation Model (DLRM) training. The very interesting feature of the DLRMs is that the models use lots of data-intensive embedding operators compared to mostly compute-intensive operations in conventional Deep Neural Networks (DNNs). Existing software and hardware solutions are typically targeting DNNs. Such frameworks are optimized for compute-intense workloads and miss critical optimizations for data-intense embedding operators. The authors' solution includes 4D parallelism (table-wise, row-wise, column-wise and data), high-performance embedding computation through fused kernels and special hardware design to achieve better communication and memory access speed.
+
+    \item \cite{Li:SnapKV:2024}:
+
+    The paper presents KV cache compression technique called SnapKV. The compression is achieved by selecting important KV positions for each attention head. The key differences from other techniques are: SnapKV uses an observation windows consisting of several last tokens instead of just one; SnapKV uses pooling instead naive top feature results for top-k selection. The technique is based on an observation that each attention head in a model consistently focuses on specific prompt attention features. SnapKV allows to KV cache memory usage and compute demands during decoding but it does not affect prefill.
 \end{itemize}
 
 \section*{Performance}
