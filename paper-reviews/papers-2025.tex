@@ -57,6 +57,10 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Li:SnapKV:2024}:
 
     The paper presents KV cache compression technique called SnapKV. The compression is achieved by selecting important KV positions for each attention head. The key differences from other techniques are: SnapKV uses an observation windows consisting of several last tokens instead of just one; SnapKV uses pooling instead naive top feature results for top-k selection. The technique is based on an observation that each attention head in a model consistently focuses on specific prompt attention features. SnapKV allows to KV cache memory usage and compute demands during decoding but it does not affect prefill.
+
+    \item \cite{Acharya:StarAttention:2025}:
+
+    The paper presents distributed block-sparse approximate attention algorithm called Star Attention. The algorithm is broken into two phases. In the first phase, each node calculates block-wise local attention with context window segmented into blocks and each block prefixed with an anchor (first context block). In the seconds phase, query and local attention results are collected and accumulated to a global attention approximation by one selected node. The authors demonstrate that Star Attention can achieve substantial speedups without significant model accuracy degradation. Block size variation allows for speed/accuracy balancing.
 \end{itemize}
 
 \section*{Performance}
