@@ -63,6 +63,14 @@ A total of \total{citenum} papers read in the year.
     The paper presents distributed block-sparse approximate attention algorithm called Star Attention. The algorithm is broken into two phases. In the first phase, each node calculates block-wise local attention with context window segmented into blocks and each block prefixed with an anchor (first context block). In the seconds phase, query and local attention results are collected and accumulated to a global attention approximation by one selected node. The authors demonstrate that Star Attention can achieve substantial speedups without significant model accuracy degradation. Block size variation allows for speed/accuracy balancing.
 \end{itemize}
 
+\section*{Software Attacks}
+
+\begin{itemize}
+    \item \cite{Kallenberg:SpeedRacer:2014}:
+
+    The paper demonstrates how race conditions in Intel flash protection mechanism can be used to overwrite UEFI firmware. The attack utilizes race condition between a malicious thread running supervisor mode and BIOS protection thread running in SMM. The software threads can run on different hyper threads. Even though Intel chipsets provide a mechanism to protect against the attacks, neither reference UEFI implementation not UEFI provided by OEMs use the protection mechanisms as of the state when the paper was written.
+\end{itemize}
+
 \section*{Performance}
 \begin{itemize}
     \item \cite{Jacobs:DataBasePerformance:2009}:
