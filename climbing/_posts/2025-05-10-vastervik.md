@@ -16,3 +16,5 @@ Newly developed crags in the area:
 * *Kattbäcksberget*. Mixed sport and trad routes. In total, 18 routes graded from 7c. Long pumpy routes that are more than 20 meters long. The crag in shadow which makes it good place to climb during warm summer days. Third par of the routes needs nuts for belaying.
 
 * *Korpmossen*. Sport routes. In total, 28 routes graded from 5c to 8b. Parking is available near *Lilla Flugen* lake, also suitable for campers. There is a smaller wall with 6b-6c routes and an over 25 meters long wall with 7b-7c routes.
+
+Bouldering guides for *Västervik* can be found [here](https://vastervikbouldering.com/guides-and-information).
