@@ -69,6 +69,12 @@ A total of \total{citenum} papers read in the year.
     \item \cite{Kallenberg:SpeedRacer:2014}:
 
     The paper demonstrates how race conditions in Intel flash protection mechanism can be used to overwrite UEFI firmware. The attack utilizes race condition between a malicious thread running supervisor mode and BIOS protection thread running in SMM. The software threads can run on different hyper threads. Even though Intel chipsets provide a mechanism to protect against the attacks, neither reference UEFI implementation not UEFI provided by OEMs use the protection mechanisms as of the state when the paper was written.
+
+    \item \cite{Paleari:EmulatorDetection:2009}:
+
+    The paper presents and automated approach for detecting differences in behavior amount real CPUs and emulators. The differences can be used by malicious software to prevent itself from being analyzed by anti-virus tools. \texttt{or \%bh, 0x4(\%ebx)} is used as an example demonstrating different behavior on real CPU vs. QEMU. The example is really broken or it utilizes some hardware bug present in old x86 CPUs. \texttt{\%bh} register is initialized to \texttt{0} prior the instruction execution thus making the instruction's behavior effectively equal to \texttt{nop} but the paper claims that it changes \texttt{0x4(\%ebx)} memory location on real CPU and doesn't change it in QEMU. The example C code corresponds to an invalid C program but can be easily modified to become valid. The modified program doesn't experience the behavior claimed in the paper when the program is executed on a real CPU (Intel(R) Xeon(R) Gold 6248R CPU). Modified program code:
+
+    \lstinputlisting[language=C]{}
 \end{itemize}
 
 \section*{Performance}
